@@ -68,10 +68,10 @@
       <div id="publications" class="section">
         <h1 class="section-title">Publications</h1>
         <div class="mb-3">
-          <button type="button"class="btn btn-outline-dark" data-filter="all">All</button>
-          <button type="button"class="btn btn-outline-dark" data-filter=".book">Book</button>
-          <button type="button"class="btn btn-outline-dark" data-filter=".article">Journal Article</button>
-          <button type="button"class="btn btn-outline-dark" data-filter=".inproceedings">Conference Proceedings</button>
+          <button type="button"class="btn btn-outline-dark rounded-pill" data-filter="all">All</button>
+          <button type="button"class="btn btn-outline-dark rounded-pill" data-filter=".book">Book</button>
+          <button type="button"class="btn btn-outline-dark rounded-pill" data-filter=".article">Journal Article</button>
+          <button type="button"class="btn btn-outline-dark rounded-pill" data-filter=".inproceedings">Conference Proceedings</button>
         </div>
 
         <div id="publication-list" class="paper">
@@ -93,7 +93,7 @@
     		{{#each records}}
 
     		<div class="mix {{type}}">
-    			<div class="single-paper">
+    			<div class="block-wrapper mb-3 p-4 rounded">
     				<div class="media">
     					<div class="media-left mr-4 my-auto">
     					{{#if doi}}
@@ -101,7 +101,7 @@
     					{{else}}
     						<a href="{{url}}" target="_blank">
     					{{/if}}
-    						<div class="single-icon">
+    						<div class="single-icon rounded-circle">
     						<i class="fas
     							{{#compare type "inproceedings" operator="=="}} fa-file-alt{{/compare}}
     							{{#compare type "book" operator="=="}} fa-book{{/compare}}

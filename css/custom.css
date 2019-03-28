@@ -37,44 +37,36 @@
    background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
  }
 
- .single-paper {
+ .block-wrapper {
    text-align: left;
    box-shadow: 1px 1px 9px rgba(0, 0, 0, 0.1);
-   padding: 25px 20px;
-   margin-bottom: 30px;
-   border-radius: 5px;
    background: #fff;
    transition: all 0.3s ease-in-out;
  }
- .single-paper .single-icon {
+ .block-wrapper .single-icon {
    text-align: center;
    font-size: 30px;
    height: 70px;
    width: 70px;
-   /* margin: 0 auto 15px; */
    color: #212121;
    background: rgba(0, 0, 0, 0.05);
    line-height: 70px;
-   border-radius: 50%;
    transition: all 0.3s ease-in-out;
  }
- .single-paper .paper-title {
+ .block-wrapper .paper-title {
    margin: 0 auto 10px 30px;
    font-size: 20px;
-   color: #333;
    font-weight: 600;
    text-transform: capitalize;
    transition: all 0.3s ease-in-out;
-   /* margin-bottom: 10px; */
-   /* margin-left: 100px; */
  }
- .single-paper:hover {
+ .block-wrapper:hover {
    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.07);
    border-color: #212121;
    -ms-transform: translateY(-3px);
    transform: translateY(-3px);
  }
- .single-paper:hover .single-icon{
+ .block-wrapper:hover .single-icon{
    background-color: #212121;
    color: #fff;
  }
