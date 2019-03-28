@@ -34,6 +34,9 @@
             <li class="nav-item">
               <a class="nav-link h4" href="#publications">Publications</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link h4" href="#tools">Tools</a>
+            </li>
           </ul>
         </div>
       </nav>
@@ -67,21 +70,51 @@
 
       <div id="publications" class="section">
         <h1 class="section-title">Publications</h1>
-        <div class="mb-3">
+        <div class="mb-3 text-center d-block">
           <button type="button"class="btn btn-outline-dark rounded-pill" data-filter="all">All</button>
           <button type="button"class="btn btn-outline-dark rounded-pill" data-filter=".book">Book</button>
           <button type="button"class="btn btn-outline-dark rounded-pill" data-filter=".article">Journal Article</button>
           <button type="button"class="btn btn-outline-dark rounded-pill" data-filter=".inproceedings">Conference Proceedings</button>
         </div>
 
-        <div id="publication-list" class="paper">
+        <div class="paper">
 				<!-- Load publication list by script below -->
 			  </div><!--/.row-->
+      </div>
 
-
+      <div id="tools" class="section">
+        <h1 class="section-title">Tools</h1>
+        <div class="row">
+          <div class="col-md-6 col-sm-12 col-xs-12">
+            <div class="card block-wrapper my-2 d-flex">
+              <div class="card-body">
+                <p class="card-title h4">Countdown Timer</p>
+                <p class="card-text">Count down time.</p>
+                <a href="Countdown-Timer/" class="btn btn-dark" target="_blank">Try</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-12 col-xs-12">
+            <div class="card block-wrapper my-2 d-flex">
+              <div class="card-body">
+                <p class="card-title h4">Special title treatment</p>
+                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <a href="#" class="btn btn-dark" target="_blank">Try</a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
     </main><!-- /.container -->
+
+    <footer class="footer bg-dark text-light mt-5 pt-4">
+      <div class="text-center">
+        <a class="text-light d-inline-block" href="mailto:yyang@wtamu.edu"><i class="fas fa-envelope"></i></a>
+        <p class="small mb-0">&copy;2019 <strong>Yong Yang</strong>. All Rights Reserved</p>
+        <p class="small mb-0 pb-4">Last updated: Mon October 1, 2018</p>
+      </div>
+    </footer>
 
     <!-- Bootstrap core JavaScript -->
     <!-- Placed at the end of the document so the pages load faster -->
@@ -95,23 +128,23 @@
     		<div class="mix {{type}}">
     			<div class="block-wrapper mb-3 p-4 rounded">
     				<div class="media">
-    					<div class="media-left mr-4 my-auto">
-    					{{#if doi}}
-    						<a href="https://doi.org/{{doi}}" target="_blank">
+    					<div class="mr-4">
+              <a href=
+              {{#if doi}}
+    						"https://doi.org/{{doi}}"
     					{{else}}
-    						<a href="{{url}}" target="_blank">
+    						"{{url}}"
     					{{/if}}
-    						<div class="single-icon rounded-circle">
+    						target="_blank" class="text-dark h4">
     						<i class="fas
     							{{#compare type "inproceedings" operator="=="}} fa-file-alt{{/compare}}
     							{{#compare type "book" operator="=="}} fa-book{{/compare}}
     							{{#compare type "article" operator="=="}} fa-archive{{/compare}}
     						"></i>
-    						</div>
     						</a>
     					</div>
     					<div class="media-body">
-    						<h4 class="media-heading">{{title}}</h4>
+    						<p class="media-heading h4">{{title}}</p>
     						<p>{{#each author}}
     						{{#compare name "Yang, Yong" operator="=="}}<b>{{/compare}}
     						{{parseName name}}
