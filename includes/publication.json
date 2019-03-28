@@ -1,0 +1,754 @@
+{
+ "metadata": {
+  "collection": "publication",
+  "source": "publication.bib",
+  "created": "2018-04-05T20:40:49.768777",
+  "records": 23
+ },
+ "records": [
+  {
+   "type": "article",
+   "id": "Dong2018",
+   "citekey": "Dong2018",
+   "collection": "publication",
+   "title": "Spectrum study on unsteadiness of shock wave--vortex ring interaction",
+   "doi": "10.1063/1.5027299",
+   "url": "https://aip.scitation.org/doi/abs/10.1063/1.5027299",
+   "year": "2018",
+   "author": [
+    {
+     "name": "Dong, Xiangrui"
+    },
+    {
+     "name": "Yan, Yonghua"
+    },
+    {
+     "name": "Yang, Yong"
+    },
+    {
+     "name": "Dong, Gang"
+    },
+    {
+     "name": "Liu, Chaoqun"
+    }
+   ],
+   "journal": {
+    "name": "Physics of Fluids",
+    "volume": "30",
+    "number": "5",
+    "pages": "056101",
+    "month": "may"
+   }
+  },
+  {
+   "type": "inproceedings",
+   "id": "Yang2018",
+   "citekey": "Yang2018",
+   "collection": "publication",
+   "title": "POD Analyses on Vortex Structure in Late-stage Transition",
+   "doi": "10.2514/6.2018-0821",
+   "url": "https://arc.aiaa.org/doi/10.2514/6.2018-0821",
+   "year": "2018",
+   "booktitle": "2018 AIAA Aerospace Sciences Meeting",
+   "address": "Kissimmee, Florida",
+   "month": "jan",
+   "author": [
+    {
+     "name": "Yang, Yong"
+    },
+    {
+     "name": "Tian, Shuling"
+    },
+    {
+     "name": "Liu, Chaoqun"
+    }
+   ],
+   "publisher": {
+    "name": "American Institute of Aeronautics and Astronautics",
+    "address": "Kissimmee, Florida"
+   }
+  },
+  {
+   "type": "inproceedings",
+   "id": "Tian2018",
+   "citekey": "Tian2018",
+   "collection": "publication",
+   "title": "DNS study on large vortex ring formation in late flow transition",
+   "doi": "10.2514/6.2018-0841",
+   "url": "https://arc.aiaa.org/doi/10.2514/6.2018-0841",
+   "year": "2018",
+   "booktitle": "2018 AIAA Aerospace Sciences Meeting",
+   "address": "Kissimmee, Florida",
+   "month": "jan",
+   "author": [
+    {
+     "name": "Tian, Shuling"
+    },
+    {
+     "name": "Yang, Yong"
+    },
+    {
+     "name": "Gao, Yisheng"
+    },
+    {
+     "name": "Liu, Chaoqun"
+    }
+   ],
+   "publisher": {
+    "name": "American Institute of Aeronautics and Astronautics",
+    "address": "Kissimmee, Florida"
+   }
+  },
+  {
+   "type": "inproceedings",
+   "id": "Dong2018",
+   "citekey": "Dong2018",
+   "collection": "publication",
+   "title": "Frequency Investigation on Unsteadiness of Shock-Vortex Ring Interaction",
+   "doi": "10.2514/6.2018-0034",
+   "url": "https://arc.aiaa.org/doi/10.2514/6.2018-0034",
+   "year": "2018",
+   "booktitle": "2018 AIAA Aerospace Sciences Meeting",
+   "address": "Kissimmee, Florida",
+   "month": "jan",
+   "author": [
+    {
+     "name": "Dong, Xiangrui"
+    },
+    {
+     "name": "Yan, Yonghua"
+    },
+    {
+     "name": "Yang, Yong"
+    },
+    {
+     "name": "Liu, Chaoqun"
+    }
+   ],
+   "publisher": {
+    "name": "American Institute of Aeronautics and Astronautics",
+    "address": "Kissimmee, Florida"
+   }
+  },
+  {
+   "type": "inproceedings",
+   "id": "Dong2018a",
+   "citekey": "Dong2018a",
+   "collection": "publication",
+   "title": "LES Study on Structure Characteristics of Shock/Vortex Ring Interaction",
+   "doi": "10.2514/6.2018-1530",
+   "url": "https://arc.aiaa.org/doi/10.2514/6.2018-1530",
+   "year": "2018",
+   "booktitle": "2018 AIAA Aerospace Sciences Meeting",
+   "address": "Kissimmee, Florida",
+   "month": "jan",
+   "author": [
+    {
+     "name": "Dong, Xiangrui"
+    },
+    {
+     "name": "Yan, Yonghua"
+    },
+    {
+     "name": "Dong, Yinlin"
+    },
+    {
+     "name": "Yang, Yong"
+    },
+    {
+     "name": "Liu, Chaoqun"
+    }
+   ],
+   "publisher": {
+    "name": "American Institute of Aeronautics and Astronautics",
+    "address": "Kissimmee, Florida"
+   }
+  },
+  {
+   "type": "book",
+   "id": "Liu2017",
+   "citekey": "Liu2017",
+   "collection": "publication",
+   "title": "High Order Large Eddy Simulation for Shock-Boundary Layer Interaction Control by a Micro-ramp Vortex Generator",
+   "doi": "10.2174/97816810859751170201",
+   "url": "http://www.eurekaselect.com/158175/volume/2",
+   "year": "2017",
+   "volume": "2",
+   "series": "Frontiers in Aerospace Science",
+   "month": "dec",
+   "author": [
+    {
+     "name": "Liu, Chaoqun"
+    },
+    {
+     "name": "Li, Qin"
+    },
+    {
+     "name": "Yan, Yonghua"
+    },
+    {
+     "name": "Yang, Yong"
+    },
+    {
+     "name": "Yang, Guang"
+    },
+    {
+     "name": "Dong, Xiangrui"
+    }
+   ],
+   "editor": [
+    {
+     "name": {
+      "name": "Liu, Chaoqun",
+      "ID": "LiuChaoqun"
+     }
+    },
+    {
+     "name": {
+      "name": "Li, Qin",
+      "ID": "LiQin"
+     }
+    },
+    {
+     "name": {
+      "name": "Yan, Yonghua",
+      "ID": "YanYonghua"
+     }
+    },
+    {
+     "name": {
+      "name": "Yang, Yong",
+      "ID": "YangYong"
+     }
+    },
+    {
+     "name": {
+      "name": "Yang, Guang",
+      "ID": "YangGuang"
+     }
+    },
+    {
+     "name": {
+      "name": "Dong, Xiangrui",
+      "ID": "DongXiangrui"
+     }
+    }
+   ],
+   "publisher": {
+    "name": "Bentham Science Publishers Ltd."
+   }
+  },
+  {
+   "type": "article",
+   "id": "Wang2017",
+   "citekey": "Wang2017",
+   "collection": "publication",
+   "title": "DNS Study on Vortex and Vorticity in Late Boundary Layer Transition",
+   "doi": "10.4208/cicp.OA-2016-0183",
+   "url": "https://www.cambridge.org/core/product/identifier/S1815240617000664/type/journal_article",
+   "year": "2017",
+   "author": [
+    {
+     "name": "Wang, Yiqian"
+    },
+    {
+     "name": "Yang, Yong"
+    },
+    {
+     "name": "Yang, Guang"
+    },
+    {
+     "name": "Liu, Chaoqun"
+    }
+   ],
+   "journal": {
+    "name": "Communications in Computational Physics",
+    "volume": "22",
+    "number": "02",
+    "pages": "441--459",
+    "month": "aug"
+   }
+  },
+  {
+   "type": "inproceedings",
+   "id": "Dong2017",
+   "citekey": "Dong2017",
+   "collection": "publication",
+   "title": "DNS Study on Three Vortex Identification Methods",
+   "doi": "10.2514/6.2017-0137",
+   "url": "http://arc.aiaa.org/doi/10.2514/6.2017-0137",
+   "year": "2017",
+   "booktitle": "55th AIAA Aerospace Sciences Meeting",
+   "address": "Grapevine, Texas",
+   "month": "jan",
+   "author": [
+    {
+     "name": "Dong, Yinlin"
+    },
+    {
+     "name": "Yang, Yong"
+    },
+    {
+     "name": "Liu, Chaoqun"
+    }
+   ],
+   "publisher": {
+    "name": "American Institute of Aeronautics and Astronautics",
+    "address": "Grapevine, Texas"
+   }
+  },
+  {
+   "type": "inproceedings",
+   "id": "Aldujaly2017",
+   "citekey": "Aldujaly2017",
+   "collection": "publication",
+   "title": "Weighted Upwinding Compact Scheme for Shock Capturing",
+   "doi": "10.2514/6.2017-0308",
+   "url": "http://arc.aiaa.org/doi/10.2514/6.2017-0308",
+   "year": "2017",
+   "booktitle": "55th AIAA Aerospace Sciences Meeting",
+   "address": "Grapevine, Texas",
+   "month": "jan",
+   "author": [
+    {
+     "name": "Aldujaly, Hassan"
+    },
+    {
+     "name": "Yang, Yong"
+    },
+    {
+     "name": "Liu, Chaoqun"
+    }
+   ],
+   "publisher": {
+    "name": "American Institute of Aeronautics and Astronautics",
+    "address": "Grapevine, Texas"
+   }
+  },
+  {
+   "type": "inproceedings",
+   "id": "Dong2017a",
+   "citekey": "Dong2017a",
+   "collection": "publication",
+   "title": "Numerical Investigation on the Oblique Shock and High-speed Vortex Rings Interaction",
+   "doi": "10.2514/6.2017-0490",
+   "url": "http://arc.aiaa.org/doi/10.2514/6.2017-0490",
+   "year": "2017",
+   "booktitle": "55th AIAA Aerospace Sciences Meeting",
+   "address": "Grapevine, Texas",
+   "month": "jan",
+   "author": [
+    {
+     "name": "Dong, Yinlin"
+    },
+    {
+     "name": "Dong, Xiangrui"
+    },
+    {
+     "name": "Yang, Yong"
+    },
+    {
+     "name": "Liu, Chaoqun"
+    }
+   ],
+   "publisher": {
+    "name": "American Institute of Aeronautics and Astronautics",
+    "address": "Grapevine, Texas"
+   }
+  },
+  {
+   "type": "inproceedings",
+   "id": "Yang2017",
+   "citekey": "Yang2017",
+   "collection": "publication",
+   "title": "Observation of the development of -vortex to hairpin vortex packet",
+   "doi": "10.2514/6.2017-1458",
+   "url": "http://arc.aiaa.org/doi/10.2514/6.2017-1458",
+   "year": "2017",
+   "booktitle": "55th AIAA Aerospace Sciences Meeting",
+   "address": "Grapevine, Texas",
+   "month": "jan",
+   "author": [
+    {
+     "name": "Yang, Yong"
+    },
+    {
+     "name": "Tian, Shuling"
+    },
+    {
+     "name": "Liu, Chaoqun"
+    }
+   ],
+   "publisher": {
+    "name": "American Institute of Aeronautics and Astronautics",
+    "address": "Grapevine, Texas"
+   }
+  },
+  {
+   "type": "inproceedings",
+   "id": "Yang2017a",
+   "citekey": "Yang2017a",
+   "collection": "publication",
+   "title": "Spectrum analysis of SWBLI under ramp-type MVG control",
+   "doi": "10.2514/6.2017-0946",
+   "url": "http://arc.aiaa.org/doi/10.2514/6.2017-0946",
+   "year": "2017",
+   "booktitle": "55th AIAA Aerospace Sciences Meeting",
+   "address": "Grapevine, Texas",
+   "month": "jan",
+   "author": [
+    {
+     "name": "Yang, Yong"
+    },
+    {
+     "name": "Tian, Shuling"
+    },
+    {
+     "name": "Dong, Xiangrui"
+    },
+    {
+     "name": "Liu, Chaoqun"
+    }
+   ],
+   "publisher": {
+    "name": "American Institute of Aeronautics and Astronautics",
+    "address": "Grapevine, Texas"
+   }
+  },
+  {
+   "type": "inproceedings",
+   "id": "Dong2017b",
+   "citekey": "Dong2017b",
+   "collection": "publication",
+   "title": "LES Study on Unsteadiness of Shock Boundary Layer Interaction",
+   "doi": "10.2514/6.2017-1883",
+   "url": "http://arc.aiaa.org/doi/10.2514/6.2017-1883",
+   "year": "2017",
+   "booktitle": "55th AIAA Aerospace Sciences Meeting",
+   "address": "Grapevine, Texas",
+   "month": "jan",
+   "author": [
+    {
+     "name": "Dong, Xiangrui"
+    },
+    {
+     "name": "Yang, Yong"
+    },
+    {
+     "name": "Tang, Jie"
+    },
+    {
+     "name": "Liu, Chaoqun"
+    }
+   ],
+   "publisher": {
+    "name": "American Institute of Aeronautics and Astronautics",
+    "address": "Grapevine, Texas"
+   }
+  },
+  {
+   "type": "inproceedings",
+   "id": "Tang2017",
+   "citekey": "Tang2017",
+   "collection": "publication",
+   "title": "Line Box Relaxation Method and Multigrid Acceleration for Simulation of 2-D Jet Flow in a Channel",
+   "doi": "10.2514/6.2017-0754",
+   "url": "http://arc.aiaa.org/doi/10.2514/6.2017-0754",
+   "year": "2017",
+   "booktitle": "55th AIAA Aerospace Sciences Meeting",
+   "address": "Grapevine, Texas",
+   "month": "jan",
+   "author": [
+    {
+     "name": "Tang, Jie"
+    },
+    {
+     "name": "Yang, Yong"
+    },
+    {
+     "name": "Liu, Chaoqun"
+    }
+   ],
+   "publisher": {
+    "name": "American Institute of Aeronautics and Astronautics",
+    "address": "Grapevine, Texas"
+   }
+  },
+  {
+   "type": "article",
+   "id": "Yang2016",
+   "citekey": "Yang2016",
+   "collection": "publication",
+   "title": "ILES for mechanism of ramp-type MVG reducing shock induced flow separation",
+   "doi": "10.1007/s11433-016-0348-2",
+   "url": "http://link.springer.com/10.1007/s11433-016-0348-2",
+   "year": "2016",
+   "author": [
+    {
+     "name": "Yang, Yong"
+    },
+    {
+     "name": "Yan, Yonghua"
+    },
+    {
+     "name": "Liu, Chaoqun"
+    }
+   ],
+   "journal": {
+    "name": "Science China Physics, Mechanics & Astronomy",
+    "volume": "59",
+    "number": "12",
+    "pages": "124711",
+    "month": "dec"
+   }
+  },
+  {
+   "type": "article",
+   "id": "Liu2016",
+   "citekey": "Liu2016",
+   "collection": "publication",
+   "title": "New omega vortex identification method",
+   "doi": "10.1007/s11433-016-0022-6",
+   "url": "http://link.springer.com/10.1007/s11433-016-0022-6",
+   "year": "2016",
+   "author": [
+    {
+     "name": "Liu, Chaoqun"
+    },
+    {
+     "name": "Wang, Yiqian"
+    },
+    {
+     "name": "Yang, Yong"
+    },
+    {
+     "name": "Duan, Zhiwei"
+    }
+   ],
+   "journal": {
+    "name": "Science China Physics, Mechanics & Astronomy",
+    "volume": "59",
+    "number": "8",
+    "pages": "684711",
+    "month": "aug"
+   }
+  },
+  {
+   "type": "inproceedings",
+   "id": "Yang2016a",
+   "citekey": "Yang2016a",
+   "collection": "publication",
+   "title": "Large-Eddy Simulation of Shock-Induced Flow Separation Control Using SparkJet Concept",
+   "doi": "10.2514/6.2016-0045",
+   "url": "http://arc.aiaa.org/doi/10.2514/6.2016-0045",
+   "year": "2016",
+   "booktitle": "54th AIAA Aerospace Sciences Meeting",
+   "pages": "2016--0045",
+   "address": "San Diego, California",
+   "month": "jan",
+   "author": [
+    {
+     "name": "Yang, Guang"
+    },
+    {
+     "name": "Yao, Yufeng"
+    },
+    {
+     "name": "Fang, Jian"
+    },
+    {
+     "name": "Gan, Tian"
+    },
+    {
+     "name": "Lu, Lipeng"
+    },
+    {
+     "name": "Yang, Yong"
+    }
+   ],
+   "publisher": {
+    "name": "American Institute of Aeronautics and Astronautics",
+    "address": "San Diego, California"
+   }
+  },
+  {
+   "type": "inproceedings",
+   "id": "Wang2016",
+   "citekey": "Wang2016",
+   "collection": "publication",
+   "title": "DNS Study on Motion around a Vortex Ring in Transitional Boundary Layers",
+   "doi": "10.2514/6.2016-0327",
+   "url": "http://arc.aiaa.org/doi/10.2514/6.2016-0327",
+   "year": "2016",
+   "booktitle": "54th AIAA Aerospace Sciences Meeting",
+   "number": "January",
+   "pages": "2016--0327",
+   "address": "San Diego, California",
+   "month": "jan",
+   "author": [
+    {
+     "name": "Wang, Yiqian"
+    },
+    {
+     "name": "Yang, Yong"
+    },
+    {
+     "name": "Chern, Shuhyi"
+    },
+    {
+     "name": "Liu, Chaoqun"
+    }
+   ],
+   "publisher": {
+    "name": "American Institute of Aeronautics and Astronautics",
+    "address": "San Diego, California"
+   }
+  },
+  {
+   "type": "inproceedings",
+   "id": "Yang2016b",
+   "citekey": "Yang2016b",
+   "collection": "publication",
+   "title": "LES Analysis on Shock-Vortex Ring Interaction",
+   "doi": "10.2514/6.2016-0571",
+   "url": "http://arc.aiaa.org/doi/10.2514/6.2016-0571",
+   "year": "2016",
+   "booktitle": "54th AIAA Aerospace Sciences Meeting",
+   "number": "January",
+   "pages": "2016--0571",
+   "address": "San Diego, California",
+   "month": "jan",
+   "author": [
+    {
+     "name": "Yang, Yong"
+    },
+    {
+     "name": "Tang, Jie"
+    },
+    {
+     "name": "Liu, Chaoqun"
+    }
+   ],
+   "publisher": {
+    "name": "American Institute of Aeronautics and Astronautics",
+    "address": "San Diego, California"
+   }
+  },
+  {
+   "type": "article",
+   "id": "Yang2015",
+   "citekey": "Yang2015",
+   "collection": "publication",
+   "title": "DNS Study on Mechanism of Flow Chaos in Late Boundary Layer Transition",
+   "url": "http://www.cmsim.eu/papers_pdf/april_2015_papers/15_CMSIM_Journal_Yang_etal_2015_2_157-168.pdf",
+   "year": "2015",
+   "author": [
+    {
+     "name": "Yang, Yong"
+    },
+    {
+     "name": "Tang, Jie"
+    },
+    {
+     "name": "Yan, Yonghua"
+    },
+    {
+     "name": "Liu, Chaoqun"
+    }
+   ]
+  },
+  {
+   "type": "inproceedings",
+   "id": "Yang2015b",
+   "citekey": "Yang2015b",
+   "collection": "publication",
+   "title": "LES Study on Mechanism of Reduction of Shock Induced Flow Separation by MVG",
+   "doi": "10.2514/6.2015-1240",
+   "url": "http://arc.aiaa.org/doi/10.2514/6.2015-1240",
+   "year": "2015",
+   "booktitle": "53rd AIAA Aerospace Sciences Meeting",
+   "number": "January",
+   "pages": "2015--1240",
+   "address": "Orlando, Florida",
+   "month": "jan",
+   "author": [
+    {
+     "name": "Yang, Yong"
+    },
+    {
+     "name": "Yan, Yonghua"
+    },
+    {
+     "name": "Liu, Chaoqun"
+    }
+   ],
+   "publisher": {
+    "name": "American Institute of Aeronautics and Astronautics",
+    "address": "Orlando, Florida"
+   }
+  },
+  {
+   "type": "inproceedings",
+   "id": "Tang2015",
+   "citekey": "Tang2015",
+   "collection": "publication",
+   "title": "DNS Study on Role of Linearly Unstable Modes in Flow Transition",
+   "doi": "10.2514/6.2015-0585",
+   "url": "http://arc.aiaa.org/doi/10.2514/6.2015-0585",
+   "year": "2015",
+   "booktitle": "53rd AIAA Aerospace Sciences Meeting",
+   "number": "January",
+   "pages": "2015--0585",
+   "address": "Orlando, Florida",
+   "month": "jan",
+   "author": [
+    {
+     "name": "Tang, Jie"
+    },
+    {
+     "name": "Yang, Yong"
+    },
+    {
+     "name": "Yan, Yonghua"
+    },
+    {
+     "name": "Liu, Chaoqun"
+    }
+   ],
+   "publisher": {
+    "name": "American Institute of Aeronautics and Astronautics",
+    "address": "Orlando, Florida"
+   }
+  },
+  {
+   "type": "inproceedings",
+   "id": "Yang2015a",
+   "citekey": "Yang2015a",
+   "collection": "publication",
+   "title": "Optimization of MVG Position for Control of Shock Boundary Layer Interaction",
+   "doi": "10.2514/6.2015-1487",
+   "url": "http://arc.aiaa.org/doi/abs/10.2514/6.2015-1487 http://arc.aiaa.org/doi/10.2514/6.2015-1487",
+   "year": "2015",
+   "booktitle": "53rd AIAA Aerospace Sciences Meeting",
+   "number": "January",
+   "pages": "2015--1487",
+   "address": "Orlando, Florida",
+   "month": "jan",
+   "author": [
+    {
+     "name": "Yang, Yong"
+    },
+    {
+     "name": "Yan, Yonghua"
+    },
+    {
+     "name": "Liu, Chaoqun"
+    }
+   ],
+   "publisher": {
+    "name": "American Institute of Aeronautics and Astronautics",
+    "address": "Orlando, Florida"
+   }
+  }
+ ]
+}

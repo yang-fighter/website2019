@@ -1,0 +1,80 @@
+/**
+ * @Author: Yong Yang
+ * @Date:   03-25-2019 13:31:25
+ * @Email:  yyang@wtamu.edu
+ * @Last modified by:   Yong Yang
+ * @Last modified time: 03-27-2019 17:11:58
+ */
+
+ html, body, header {
+   height: 100%;
+   /* margin: 0; */
+ }
+ .section {
+   padding-top: 7rem;
+ }
+ .section-title {
+   text-align: center;
+ }
+
+ .welcome-area {
+   /* The image used */
+   background-image: url("../img/video-bg.jpg");
+   /* background: url('https://source.unsplash.com/XT5OInaElMw/1600x900') black no-repeat center center scroll; */
+   /* background: url('https://storage.googleapis.com/coverr-main/mp4/Mt_Baker.mp4') black no-repeat center center scroll; */
+
+   /* Full height */
+   height: 100%;
+
+   /* Center and scale the image nicely */
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+ }
+ .mask {
+   height: 100%;
+   background: rgb(0, 0, 0); /* Fallback color */
+   background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+ }
+
+ .single-paper {
+   text-align: left;
+   box-shadow: 1px 1px 9px rgba(0, 0, 0, 0.1);
+   padding: 25px 20px;
+   margin-bottom: 30px;
+   border-radius: 5px;
+   background: #fff;
+   transition: all 0.3s ease-in-out;
+ }
+ .single-paper .single-icon {
+   text-align: center;
+   font-size: 30px;
+   height: 70px;
+   width: 70px;
+   /* margin: 0 auto 15px; */
+   color: #212121;
+   background: rgba(0, 0, 0, 0.05);
+   line-height: 70px;
+   border-radius: 50%;
+   transition: all 0.3s ease-in-out;
+ }
+ .single-paper .paper-title {
+   margin: 0 auto 10px 30px;
+   font-size: 20px;
+   color: #333;
+   font-weight: 600;
+   text-transform: capitalize;
+   transition: all 0.3s ease-in-out;
+   /* margin-bottom: 10px; */
+   /* margin-left: 100px; */
+ }
+ .single-paper:hover {
+   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.07);
+   border-color: #212121;
+   -ms-transform: translateY(-3px);
+   transform: translateY(-3px);
+ }
+ .single-paper:hover .single-icon{
+   background-color: #212121;
+   color: #fff;
+ }
