@@ -61,7 +61,12 @@ $( document ).ready(function() {
       $(".paper").append(html);
 
       // Startup MixItUp
-      var mixer = mixitup(".paper");
+      var mixer = mixitup(".paper",{
+        selectors: {
+          control: '[data-mixitup-control]'
+        }
+      });
+
     }
   });
 
