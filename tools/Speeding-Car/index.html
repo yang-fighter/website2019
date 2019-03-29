@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Speeding Car</title>
+	<meta name=viewport content="width=device-width,initial-scale=1">
+	<script src="https://cdn.geogebra.org/apps/deployggb.js"></script>
+
+</head>
+<body>
+	<div id="ggbApplet" style="margin: 20px"></div>
+
+	<script>
+		var parameters = {
+			"id": "ggbApplet",
+			"width":window.innerWidth-56,
+			"height":window.innerHeight-40,
+			"showMenuBar":false,
+			"showAlgebraInput":false,
+			"showToolBar":false,
+			"showToolBarHelp":true,
+			"showResetIcon":false,
+			"enableLabelDrags":false,
+			"enableShiftDragZoom":true,
+			"enableRightClick":false,
+			"errorDialogsActive":false,
+			"useBrowserForJS":false,
+			"allowStyleBar":false,
+			"preventFocus":false,
+			"showZoomButtons":false,
+			"capturingThreshold":3,
+			// add code here to run when the applet starts
+			"appletOnLoad":function(api){ /* api.evalCommand('Segment((1,2),(3,4))');*/ },
+			"showFullscreenButton":true,
+			"scale":1,
+			"disableAutoScale":true,
+			"allowUpscale":false,
+			"clickToLoad":false,
+			"appName":"classic",
+			"showSuggestionButtons":true,
+			"buttonRounding":0.7,
+			"buttonShadows":false,
+			"language":"en",
+			"filename":"data.ggb",
+
+		};
+		// is3D=is 3D applet using 3D view, AV=Algebra View, SV=Spreadsheet View, CV=CAS View, EV2=Graphics View 2, CP=Construction Protocol, PC=Probability Calculator DA=Data Analysis, FI=Function Inspector, macro=Macros
+		var views = {'is3D': 0,'AV': 0,'SV': 0,'CV': 0,'EV2': 0,'CP': 0,'PC': 0,'DA': 0,'FI': 0,'macro': 0};
+		var applet = new GGBApplet(parameters, '5.0', views);
+		window.onload = function() {applet.inject('ggbApplet')};
+		applet.setPreviewImage('../img/math.png','https://www.geogebra.org/images/GeoGebra_loading.png','https://www.geogebra.org/images/applet_play.png');
+	</script>
+</body>
+</html>
