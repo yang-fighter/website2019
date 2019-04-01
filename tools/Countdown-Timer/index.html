@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Countdown Timer</title>
+	<meta name=viewport content="width=device-width,initial-scale=1">
+	<!--== bootstrap ==-->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
+	<link href="../../css/custom.css" rel="stylesheet">
+	<link href="../../css/responsive.css" rel="stylesheet">
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="timer display-1 font-weight-bold mt-5 pt-5" id="time" style="font-family: monospace; width:100%; text-align: center;"></div>
+		</div>
+		<div class="progress my-4" >
+  			<div class="progress-bar progress-bar-striped progress-bar-animated"  id="myBar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%"></div>
+		</div>
+
+		<button type="button" class="btn btn-primary btn-lg btn-block" id="button-start">START</button>
+		<button type="reset" class="btn btn-danger btn-lg btn-block" id="button-reset">RESET</button>
+
+		<form style="text-align:center; font-size: 20px; margin-top:50px">
+			<div class="form-row">
+				<div class="form-group col-md-4">
+					<label for="hours">Hours</label>
+					<input type="number" class="form-control" id="hours" value="0" min="0">
+				</div>
+				<div class="form-group col-md-4">
+					<label for="hours">Minutes</label>
+					<input type="number" class="form-control" id="minutes" value="50" min="0">
+				</div>
+				<div class="form-group col-md-4">
+					<label for="hours">Seconds</label>
+					<input type="number" class="form-control" id="seconds" value="0" min="0">
+				</div>
+			</div>
+		</form>
+			<button type="button" class="btn btn-success btn-lg btn-block" id="button-set">SET TIMER</button>
+
+	</div>
+	<script>
+		window.onload = function () {
+			var display = document.querySelector('#time'),
+			timer = new CountDownTimer(0),
+			initTimeObj = CountDownTimer.parse(0);
+			var duration = 0;
+			var bar=function(){return undefined;};
+
+			format(initTimeObj.hours, initTimeObj.minutes, initTimeObj.seconds);
+
+			timer.onTick(format);
+
+			document.querySelector('#button-set').addEventListener('click', function () {
+				timer.reset();
+				resetBar();
+
+				var hours=document.getElementById("hours").value;
+				var minutes=document.getElementById("minutes").value;
+				var seconds=document.getElementById("seconds").value;
+				duration=parseInt(hours)*3600+parseInt(minutes)*60+parseInt(seconds);
+				timer.duration=duration;
+				timeObj = CountDownTimer.parse(duration);
+				format(timeObj.hours, timeObj.minutes, timeObj.seconds);
+			});
+			document.querySelector('#button-start').addEventListener('click', function () {
+				timer.start();
+				move();
+			});
+			document.querySelector('#button-reset').addEventListener('click', function () {
+				timer.reset();
+				resetBar();
+				format(initTimeObj.hours, initTimeObj.minutes, initTimeObj.seconds);
+			});
+
+			function format(hours,minutes, seconds) {
+				hours = hours < 10 ? "0" + hours : hours;
+				minutes = minutes < 10 ? "0" + minutes : minutes;
+				seconds = seconds < 10 ? "0" + seconds : seconds;
+				display.textContent = hours + ':' + minutes + ':' + seconds;
+			}
+			function move() {
+				var elem = document.getElementById("myBar");
+				var width = 0;
+				bar = setInterval(frame, 1000);
+				function frame() {
+					if (width >= duration) {
+						clearInterval(bar);
+					} else {
+						width++;
+						elem.style.width = width/duration*100 + '%';
+					}
+				}
+			}
+			function resetBar() {
+				clearInterval(bar);
+				duration = 0;
+				document.getElementById("myBar").style.width='0%';
+			}
+		};
+	</script>
+	<script  src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<script src="../../js/countdowntimer.js"></script>
+
+</body>
+</html>
