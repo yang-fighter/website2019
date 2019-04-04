@@ -3,7 +3,7 @@
  * @Date:   03-25-2019 13:31:25
  * @Email:  yyang@wtamu.edu
  * @Last modified by:   Yong Yang
- * @Last modified time: 03-28-2019 14:22:15
+ * @Last modified time: 04-04-2019 10:35:17
  */
 
  html, body, header {
@@ -19,7 +19,7 @@
 
  .welcome-area {
    /* The image used */
-   background-image: url("../img/video-bg.jpg");
+   background-image: url("../img/background.jpg");
 
    /* Full height */
    height: 100%;
