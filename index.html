@@ -73,11 +73,20 @@
 
       <div id="publications" class="section">
         <h1 class="section-title">Publications</h1>
-        <div class="text-center d-block">
-          <button type="button" class="mb-3 btn btn-outline-dark rounded-pill" data-mixitup-control data-filter="all">All</button>
-          <button type="button" class="mb-3 btn btn-outline-dark rounded-pill" data-mixitup-control data-filter=".book">Book</button>
-          <button type="button" class="mb-3 btn btn-outline-dark rounded-pill" data-mixitup-control data-filter=".article">Journal Article</button>
-          <button type="button" class="mb-3 btn btn-outline-dark rounded-pill" data-mixitup-control data-filter=".inproceedings">Conference Proceedings</button>
+        <div class="text-center d-block btn-group btn-group-toggle" data-toggle="buttons">
+          <label class="mb-3 btn btn-outline-dark rounded-pill active" data-mixitup-control data-filter="all">
+            <input type="radio" name="options" id="option1" autocomplete="off" checked> All
+          </label>
+          <label class="mb-3 btn btn-outline-dark rounded-pill" data-mixitup-control data-filter=".book">
+            <input type="radio" name="options" id="option1" autocomplete="off" checked> Book
+          </label>
+          <label class="mb-3 btn btn-outline-dark rounded-pill" data-mixitup-control data-filter=".article">
+            <input type="radio" name="options" id="option1" autocomplete="off" checked> Journal Article
+          </label>
+          <label class="mb-3 btn btn-outline-dark rounded-pill" data-mixitup-control data-filter=".inproceedings">
+            <input type="radio" name="options" id="option1" autocomplete="off" checked> Conference Proceedings
+          </label>
+
         </div>
 
         <div class="paper">
