@@ -11,6 +11,7 @@
 </head>
 <body>
 	<div class="container">
+		<div id="spacer" class="row d-none" style="height:20vh;"></div>
 		<div class="row">
 			<div class="timer display-1 font-weight-bold mt-5 pt-5" id="time" style="font-family: monospace; width:100%; text-align: center;"></div>
 		</div>
@@ -21,7 +22,7 @@
 		<button type="button" class="btn btn-primary btn-lg btn-block" id="button-start">START</button>
 		<button type="reset" class="btn btn-danger btn-lg btn-block" id="button-reset">RESET</button>
 
-		<form style="text-align:center; font-size: 20px; margin-top:50px">
+		<form id="time-form" style="text-align:center; font-size: 20px; margin-top:50px">
 			<div class="form-row">
 				<div class="form-group col-md-4">
 					<label for="hours">Hours</label>
@@ -37,7 +38,7 @@
 				</div>
 			</div>
 		</form>
-			<button type="button" class="btn btn-success btn-lg btn-block" id="button-set">SET TIMER</button>
+		<button type="button" class="btn btn-success btn-lg btn-block" id="button-set">SET TIMER</button>
 
 	</div>
 	<script>
@@ -67,11 +68,19 @@
 			document.querySelector('#button-start').addEventListener('click', function () {
 				timer.start();
 				move();
+				$('#button-start').addClass("d-none");
+				$('#button-set').addClass("d-none");
+				$('#time-form').addClass("d-none");
+				$('#spacer').removeClass("d-none");
 			});
 			document.querySelector('#button-reset').addEventListener('click', function () {
 				timer.reset();
 				resetBar();
 				format(initTimeObj.hours, initTimeObj.minutes, initTimeObj.seconds);
+				$('#button-start').removeClass("d-none");
+				$('#button-set').removeClass("d-none");
+				$('#time-form').removeClass("d-none");
+				$('#spacer').addClass("d-none");
 			});
 
 			function format(hours,minutes, seconds) {
