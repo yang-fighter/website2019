@@ -48,6 +48,7 @@
 			initTimeObj = CountDownTimer.parse(0);
 			var duration = 0;
 			var bar=function(){return undefined;};
+			var bli=function(){return undefined;};
 
 			format(initTimeObj.hours, initTimeObj.minutes, initTimeObj.seconds);
 
@@ -96,6 +97,7 @@
 				function frame() {
 					if (width >= duration) {
 						clearInterval(bar);
+						blink();
 					} else {
 						width++;
 						elem.style.width = width/duration*100 + '%';
@@ -106,7 +108,16 @@
 				clearInterval(bar);
 				duration = 0;
 				document.getElementById("myBar").style.width='0%';
+				clearInterval(bli);
+				display.style.color="black";
 			}
+			function blink() {
+				var color = 'crimson';
+				bli = setInterval(function() {
+					display.style.color=color;
+					color = (color === 'black') ? 'crimson' : 'black';
+				}, 250);
+			};
 		};
 	</script>
 	<script  src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
