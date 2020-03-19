@@ -1,0 +1,513 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Lecture 2. Gaussian Elimination &mdash; Linear Algebra  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/contentui.js"></script>
+        <script >MathJax = {
+        loader: {load: ['a11y/semantic-enrich']},
+        options: {
+            enrichSpeech: 'shallow',  // one of: 'deep', 'shallow', or 'none'
+            renderActions: {
+                //
+                // Force speech enrichment regardless of the menu settings
+                //
+                enrich: {'[+]': [
+                function (doc) {doc.enrich(true)},
+                function (math, doc) {math.enrich(doc, true)}  
+                ]}
+            }
+        },
+        tex: {
+            tags: 'ams'  // should be 'ams', 'none', or 'all'
+        }
+};</script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/contentui.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Linear Algebra
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../lecture1.html">1. Systems of Linear Equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lecture2.html">2. Gaussian Elimination</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Linear Algebra</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Lecture 2. Gaussian Elimination</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="lecture-2-gaussian-elimination">
+<h1>Lecture 2. Gaussian Elimination<a class="headerlink" href="#lecture-2-gaussian-elimination" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="echelon-forms">
+<h2>Echelon Forms<a class="headerlink" href="#echelon-forms" title="Permalink to this headline">¶</a></h2>
+<p>A matrix that have the following properties is in <strong>row echelon form</strong>:</p>
+<ol class="arabic simple">
+<li><p>If a row does not consist entirely of zeros, then the first nonzero
+number in the row is a 1. We call this a leading 1.</p></li>
+<li><p>If there are any rows that consist entirely of zeros, then they are
+grouped together at the bottom of the matrix.</p></li>
+<li><p>In any two successive rows that do not consist entirely of zeros, the
+leading 1 in the lower row occurs farther to the right than the
+leading 1 in the higher row.</p></li>
+</ol>
+<p>A row echelon row form matrix is in <strong>reduced row echelon form</strong> if each
+column that contains a leading 1 has zeros everywhere else in that
+column.</p>
+<p>In a linear system, the variables corresponding to the leading 1’s in
+the augmented matrix, we call these the <strong>leading variables</strong>. The
+remaining variables are called <strong>free variables</strong>.</p>
+<p>Are the following matrices in row echelon form? If so, are they in
+reduced row echelon form?</p>
+<ol class="arabic" start="4">
+<li><dl class="simple">
+<dt>:math:<a href="#id1"><span class="problematic" id="id2">`</span></a>begin{bmatrix}</dt><dd><p>1&amp;0&amp;0&amp;4\
+0&amp;1&amp;0&amp;7\
+0&amp;0&amp;1&amp;-1</p>
+</dd>
+<dt>end{bmatrix}` :math:<a href="#id3"><span class="problematic" id="id4">`</span></a>begin{bmatrix}</dt><dd><p>1&amp;0&amp;0\
+0&amp;1&amp;0\
+0&amp;0&amp;1</p>
+</dd>
+<dt>end{bmatrix}` :math:<a href="#id5"><span class="problematic" id="id6">`</span></a>begin{bmatrix}</dt><dd><p>1&amp;4&amp;-3&amp;7\
+0&amp;1&amp;6&amp;2\
+0&amp;0&amp;1&amp;5</p>
+</dd>
+<dt>end{bmatrix}` :math:<a href="#id7"><span class="problematic" id="id8">`</span></a>begin{bmatrix}</dt><dd><p>1&amp;1&amp;0\
+0&amp;1&amp;0\
+0&amp;0&amp;0</p>
+</dd>
+<dt>end{bmatrix}` :math:<a href="#id9"><span class="problematic" id="id10">`</span></a>begin{bmatrix}</dt><dd><p>0&amp;1&amp;2&amp;6&amp;0\
+0&amp;0&amp;1&amp;-1&amp;0\
+0&amp;0&amp;0&amp;0&amp;1</p>
+</dd>
+<dt>end{bmatrix}` :math:<a href="#id11"><span class="problematic" id="id12">`</span></a>begin{bmatrix}</dt><dd><p>0&amp;-1&amp;2&amp;0&amp;1\
+0&amp;0&amp;0&amp;1&amp;3\
+0&amp;0&amp;0&amp;0&amp;0\
+0&amp;0&amp;0&amp;0&amp;0</p>
+</dd>
+<dt>end{bmatrix}` :math:<a href="#id13"><span class="problematic" id="id14">`</span></a>begin{bmatrix}</dt><dd><p>0&amp;0\
+0&amp;0</p>
+</dd>
+<dt>end{bmatrix}` :math:<a href="#id15"><span class="problematic" id="id16">`</span></a>begin{bmatrix}</dt><dd><p>0&amp;1\
+1&amp;0</p>
+</dd>
+</dl>
+<p>end{bmatrix}`</p>
+</li>
+</ol>
+<p>Suppose that the augmented matrix for a linear system in the unknowns
+\(x_1,x_2,x_3\) and \(x_4\) has been reduced by elementary row
+operations to</p>
+<div class="math notranslate nohighlight">
+\begin{align*}\!\begin{aligned}
+\begin{bmatrix}
+        1&0&0&0&3\\
+        0&1&0&0&-1\\
+        0&0&1&0&0\\
+        0&0&0&1&5
+      \end{bmatrix}\\
+Find the solution of the linear system.\\
+\end{aligned}\end{align*}</div>
+<p>In each part, suppose that the augmented matrix for a linear system in
+the unknowns <em>x</em>, <em>y</em>, and <em>z</em> has been reduced by elementary row
+operations to the given reduced row echelon form. Solve the system.</p>
+<ol class="arabic" start="3">
+<li><dl class="simple">
+<dt>:math:<a href="#id17"><span class="problematic" id="id18">`</span></a>begin{bmatrix}</dt><dd><p>1&amp;0&amp;0&amp;0\
+0&amp;1&amp;2&amp;0\
+0&amp;0&amp;0&amp;1</p>
+</dd>
+<dt>end{bmatrix}` :math:<a href="#id19"><span class="problematic" id="id20">`</span></a>begin{bmatrix}</dt><dd><p>1&amp;0&amp;3&amp;-1\
+0&amp;1&amp;-4&amp;2\
+0&amp;0&amp;0&amp;0</p>
+</dd>
+<dt>end{bmatrix}` :math:<a href="#id21"><span class="problematic" id="id22">`</span></a>begin{bmatrix}</dt><dd><p>1&amp;-5&amp;1&amp;4\
+0&amp;0&amp;0&amp;0\
+0&amp;0&amp;0&amp;0</p>
+</dd>
+</dl>
+<p>end{bmatrix}`</p>
+</li>
+</ol>
+</div>
+<div class="section" id="elimination-methods">
+<h2>Elimination Methods<a class="headerlink" href="#elimination-methods" title="Permalink to this headline">¶</a></h2>
+<p>We have just seen how easy it is to solve a system of linear equations
+once its augmented matrix is in reduced row echelon form. Now we will
+give a step-by-step elimination procedure that can be used to reduce any
+matrix to reduced row echelon form.</p>
+<p>Reduce the following matrix to reduced row echelon form.</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+\begin{split}\begin{bmatrix}
+      0&0& -2&0& 7&12\\
+      2&4&-10&6&12&28\\
+      2&4& -5&6&-5&-1
+    \end{bmatrix}\end{split}
+\end{equation*}</div>
+<ol class="arabic simple">
+<li><p>Locate the leftmost column that does not consist entirely of zeros.</p></li>
+<li><p>Interchange the top row with another row, if necessary, to bring a
+nonzero entry to the top of the column found in Step 1.</p></li>
+<li><p>If the entry that is now at the top of the column found in Step 1 is
+\(a\), multiply the first row by \(\frac{1}{a}\) in order to
+introduce a leading 1.</p></li>
+<li><p>Add suitable multiples of the top row to the rows below so that all
+entries below the leading 1 become zeros.</p></li>
+<li><p>Now cover the top row in the matrix and begin again with Step 1
+applied to the submatrix that remains. Continue in this way until the
+entire matrix is in row echelon form.</p></li>
+<li><p>Beginning with the last nonzero row and working upward, add
+suitablemultiples of each row to the rows above to introduce zeros
+above the leading 1’s.</p></li>
+</ol>
+<p>Step 1-5 produces a row echelon form and is called <strong>Gaussian
+elimination</strong>. Step 1-6 produces a reduced row echelon form and is
+called <strong>Gaussian-Jordan elimination</strong>.</p>
+<p>Solve by Gauss–Jordan elimination.</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+\begin{split}\begin{aligned}
+      x_1+3x_2-2x_3+2x_5&=0\\
+      2x_1+6x_2-5x_3-2x_4+4x_5-3x_6&=-1\\
+      5x_3+10x_4+15x_6&=5\\
+      2x_1+6x_2+8x_4+4x_5+18x_6&=6
+    \end{aligned}\end{split}
+\end{equation*}</div>
+</div>
+<div class="section" id="homogeneous-linear-systems">
+<h2>Homogeneous Linear Systems<a class="headerlink" href="#homogeneous-linear-systems" title="Permalink to this headline">¶</a></h2>
+<p>A system of linear equations is said to be <strong>homogeneous</strong> if the
+constant terms are all zero; that is, the system has the form</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+\begin{split}\label{ax=0}
+    \begin{aligned}
+      a_{11}x_1+a_{12}x_2+\cdots+a_{1n}x_n&=0\\
+      a_{21}x_1+a_{22}x_2+\cdots+a_{2n}x_n&=0\\
+      \vdots\\
+      a_{m1}x_1+a_{m2}x_2+\cdots+a_{mn}x_n&=0
+    \end{aligned}\end{split}
+\end{equation*}</div>
+<p>Since the m-tuple \((0,0,\cdots,0)\) is a solution of Eq
+<a class="reference external" href="#ax=0">[ax=0]</a>, every homogeneous system of linear equations is
+consistent. This solution is called the <strong>trivial solution</strong>; if there
+are other solutions, they are called <strong>nontrivial solutions</strong>.</p>
+<p>Because a homogeneous linear system always has the trivial solution,
+there are only two possibilities for its solutions:</p>
+<ul class="simple">
+<li><p>The system has only the trivial solution.</p></li>
+<li><p>The system has infinitely many solutions in addition to the trivial
+solution.</p></li>
+</ul>
+<p>Use Gauss–Jordan elimination to solve the homogeneous linear system</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+\begin{split}\begin{aligned}
+      x_1+3x_2-2x_3+2x_5&=0\\
+      2x_1+6x_2-5x_3-2x_4+4x_5-3x_6&=0\\
+      5x_3+10x_4+15x_6&=0\\
+      2x_1+6x_2+8x_4+4x_5+18x_6&=0
+    \end{aligned}\end{split}
+\end{equation*}</div>
+<p>If a homogeneous linear system has n unknowns, and if the reduced row
+echelon form of its augmented matrix has r nonzero rows, then the system
+has \(n-r\) free variables.</p>
+<p>A homogeneous linear system with more unknowns than equations has
+infinitely many solutions.</p>
+<p>There are three facts about row echelon forms and reduced row echelon
+forms:</p>
+<ul class="simple">
+<li><p>Every matrix has a unique reduced row echelon form.</p></li>
+<li><p>Row echelon forms are not unique.</p></li>
+<li><p>Although row echelon forms are not unique, the reduced row echelon
+form and all row echelon forms of a matrix <em>A</em> have the same number
+of zero rows, and the leading 1’s always occur in the same positions.
+Those are called the <strong>pivot positions</strong> of <em>A</em>. A column that
+contains a pivot position is called a <strong>pivot column</strong> of <em>A</em>.</p></li>
+</ul>
+<p>Determine whether the matrix is in row echelon form, reduced row echelon
+form, both, or neither.</p>
+<ol class="arabic" start="3">
+<li><dl class="simple">
+<dt>:math:<a href="#id23"><span class="problematic" id="id24">`</span></a>begin{bmatrix}</dt><dd><p>0&amp;1&amp;0\
+0&amp;0&amp;1\
+0&amp;0&amp;0</p>
+</dd>
+</dl>
+<p>end{bmatrix}` \(\begin{bmatrix}
+1&amp; 0&amp; 3&amp; 1\\
+0&amp; 1&amp; 2&amp; 4
+\end{bmatrix}\) \(\begin{bmatrix}
+1&amp; 2&amp; 0&amp; 3&amp; 0\\
+0&amp; 0&amp; 1&amp; 1&amp; 0\\
+0&amp; 0&amp; 0&amp; 0&amp; 1\\
+0&amp; 0&amp; 0&amp; 0&amp; 0
+\end{bmatrix}\) \(\begin{bmatrix}
+1&amp; -7&amp; 5&amp; 5\\
+0&amp; 1 &amp; 3&amp; 2
+\end{bmatrix}\) \(\begin{bmatrix}
+1&amp; 0&amp; 0\\
+0&amp; 1&amp; 0\\
+0&amp; 2&amp; 0
+\end{bmatrix}\) \(\begin{bmatrix}
+1&amp; 2&amp; 3\\
+0&amp; 0&amp; 0\\
+0&amp; 0&amp; 1
+\end{bmatrix}\)</p>
+</li>
+</ol>
+<p>Suppose that the augmented matrix for a linear system has been reduced
+by row operations to the given row echelon form. Solve the system.</p>
+<ol class="arabic simple" start="2">
+<li><p>\(\begin{bmatrix}
+1&amp; 0&amp; 0&amp;-3\\
+0&amp; 1&amp; 0&amp; 0\\
+0&amp; 0&amp; 1&amp; 7
+\end{bmatrix}\) \(\begin{bmatrix}
+1&amp; 0&amp; 0&amp;-7&amp; 8\\
+0&amp; 1&amp; 0&amp; 3&amp; 2\\
+0&amp; 0&amp; 1&amp; 1&amp;-5
+\end{bmatrix}\) \(\begin{bmatrix}
+1&amp;-6&amp; 0&amp; 0&amp; 3&amp;-2\\
+0&amp; 0&amp; 1&amp; 0&amp; 4&amp; 7\\
+0&amp; 0&amp; 0&amp; 1&amp; 5&amp; 8\\
+0&amp; 0&amp; 0&amp; 0&amp; 0&amp; 0
+\end{bmatrix}\) \(\begin{bmatrix}
+1&amp;-3&amp; 0&amp; 0\\
+0&amp; 0&amp; 1&amp; 0\\
+0&amp; 0&amp; 0&amp; 1
+\end{bmatrix}\)</p></li>
+</ol>
+<p>Solve the linear system by Gaussian-Jordan elimination.</p>
+<ol class="arabic" start="2">
+<li><dl class="simple">
+<dt>:math:<a href="#id25"><span class="problematic" id="id26">`</span></a>begin{aligned}[t]</dt><dd><p>x_1+x_2+2x_3&amp;=8\
+-x_1-2x_2+3x_3&amp;=1\
+3x_1-7x_2+4x_3&amp;=10</p>
+</dd>
+</dl>
+<p>end{aligned}` \(\begin{aligned}[t]
+x - y + 2z - w &amp;= -1\\
+2x + y - 2z - 2w &amp;= -2\\
+-x + 2y - 4z + w &amp;= 1\\
+3x - 3w &amp;= -3
+\end{aligned}\)</p>
+</li>
+</ol>
+<p>Determine whether the homogeneous system has nontrivial solutions by
+inspection (without pencil and paper).</p>
+<ol class="arabic" start="2">
+<li><dl class="simple">
+<dt>:math:<a href="#id27"><span class="problematic" id="id28">`</span></a>begin{aligned}[t]</dt><dd><p>2x_1-3x_2+4x_3-x_4&amp;=0\
+7x_1+x_2-8x_3+9x_4&amp;=0\
+2x_1+8x_2+x_3-x_4&amp;=0</p>
+</dd>
+<dt>end{aligned}` :math:<a href="#id29"><span class="problematic" id="id30">`</span></a>begin{aligned}[t]</dt><dd><p>x_1+3x_2-x_3&amp;=0\
+x_2-8x_3&amp;=0\
+4x_3&amp;=0</p>
+</dd>
+</dl>
+<p>end{aligned}`</p>
+</li>
+</ol>
+<p>Determine the values of a for which the system has no solutions, exactly
+one solution, or infinitely many solutions.</p>
+<div class="math notranslate nohighlight">
+\begin{align*}\!\begin{aligned}
+\begin{aligned}
+        x+2y-3z&=4\\
+        3x-y+5z&=2\\
+        4x+y+(a^2-14)z&=a+2
+      \end{aligned}\\
+True or False.\\
+\end{aligned}\end{align*}</div>
+<p>If a matrix is in reduced row echelon form, then it is also in row
+echelon form. If an elementary row operation is applied to a matrix that
+is in row echelon form, the resulting matrix will still be in row
+echelon form. Every matrix has a unique row echelon form. A homogeneous
+linear system in <em>n</em> unknowns whose corresponding augmented matrix has a
+reduced row echelon form with <em>r</em> leading 1’s has \(n-r\) free
+variables. All leading 1’s in a matrix in row echelon form must occur in
+different columns. If every column of a matrix in row echelon form has a
+leading 1, then all entries that are not leading 1’s are zero. If a
+homogeneous linear system of <em>n</em> equations in <em>n</em> unknowns has a
+corresponding augmented matrix with a reduced row echelon form
+containing <em>n</em> leading 1’s, then the linear system has only the trivial
+solution. If the reduced row echelon form of the augmented matrix for a
+linear system has a row of zeros, then the system must have infinitely
+many solutions. If a linear system has more unknowns than equations,
+then it must have infinitely many solutions.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Yong Yang
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
