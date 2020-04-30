@@ -6,70 +6,82 @@
  * @Last modified time: 03-29-2019 10:52:01
  */
 
- /* Extra small devices (portrait phones, less than 576px) */
- @media (max-width: 575.98px) {
-   .display-1 {
-     font-size: 1.3rem;
-   }
-   .h3 {
-     font-size: 1rem;
-   }
-   .h4 {
-     font-size: 1rem;
-   }
-   .timer {
-     font-size: 4rem;
-   }
- }
-
- /* Small devices (landscape phones, 576px and up) */
- @media (min-width: 576px) and (max-width: 767.98px) {
-   .display-1 {
-     font-size: 2.8rem;
-   }
-   .timer {
-     font-size: 8rem;
-   }
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+  .display-1 {
+    font-size: 1.3rem;
+  }
+  .h3 {
+    font-size: 1rem;
+  }
+  .h4 {
+    font-size: 1rem;
+  }
+  .timer {
+    font-size: 4rem;
+  }
 }
 
- /* Medium devices (tablets, 768px and up) */
- @media (min-width: 768px) and (max-width: 991.98px) {
-   body {
-     font-size: 1.2rem;
-   }
-   .display-1 {
-     font-size: 3.5rem;
-   }
-   .timer {
-     font-size: 10rem;
-   }
- }
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .display-1 {
+    font-size: 2.8rem;
+  }
+  .timer {
+    font-size: 8rem;
+  }
+  .card-deck .card {
+    max-width: 240px;
+  }
+}
 
- /* Large devices (desktops, 992px and up) */
- @media (min-width: 992px) and (max-width: 1199.98px) {
-   body {
-     font-size: 1.3rem;
-   }
-   .display-1 {
-     font-size: 4rem;
-   }
-   .timer {
-     font-size: 15rem;
-   }
- }
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  body {
+    font-size: 1.2rem;
+  }
+  .display-1 {
+    font-size: 3.5rem;
+  }
+  .timer {
+    font-size: 10rem;
+  }
+  .card-deck .card {
+    max-width: 330px;
+  }
+}
 
- /* Extra large devices (large desktops, 1200px and up) */
- @media (min-width: 1200px) {
-   body {
-     font-size: 1.5rem;
-   }
-   .timer {
-     font-size: 15rem;
-   }
- }
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  body {
+    font-size: 1.3rem;
+  }
+  .display-1 {
+    font-size: 4rem;
+  }
+  .timer {
+    font-size: 15rem;
+  }
+  .card-deck .card {
+    max-width: 290px;
+  }
+}
 
- @media (min-width: 768px) {
-   .navbar:not(.top-navbar) {
-     background: transparent !important;
-   }
- }
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  body {
+    font-size: 1.5rem;
+  }
+  .timer {
+    font-size: 15rem;
+  }
+  .card-deck .card {
+    max-width: 255px;
+  }
+}
+
+@media (min-width: 768px) {
+  .navbar:not(.top-navbar) {
+    background: transparent !important;
+  }
+}

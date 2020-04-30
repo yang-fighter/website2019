@@ -2,7 +2,6 @@
 Systems of Linear Equations
 ======================================
 
-
 Linear Equation
 ===============
 
