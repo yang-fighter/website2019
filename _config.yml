@@ -1,1 +1,4 @@
-include        : ["book/math3311/19ac9fcec0d82866901a57e02395fda321a192a9/_images", "book/math3311/19ac9fcec0d82866901a57e02395fda321a192a9/_sources", "book/math3311/19ac9fcec0d82866901a57e02395fda321a192a9/_static"]
+include:
+  - book/math3311/19ac9fcec0d82866901a57e02395fda321a192a9/_images
+  - book/math3311/19ac9fcec0d82866901a57e02395fda321a192a9/_sources
+  - book/math3311/19ac9fcec0d82866901a57e02395fda321a192a9/_static
