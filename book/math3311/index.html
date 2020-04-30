@@ -125,7 +125,7 @@
 
       function loadPage(pwd) {
         var hash = sha1(pwd);
-        var url = hash + "/index.html";
+        var url = hash;
 
         $.ajax({
           url: url,
