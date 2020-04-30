@@ -1,1 +1,1 @@
-includes_dir        : _images, _sources, _static
+include        : [_images, _sources, _static]
