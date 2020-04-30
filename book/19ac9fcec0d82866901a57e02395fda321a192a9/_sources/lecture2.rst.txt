@@ -1,0 +1,205 @@
+===============================
+Gaussian Elimination
+===============================
+
+Echelon Forms
+=============
+
+.. proof:definition:: row echelon form
+
+   A matrix that have the following properties is in **row echelon form**:
+
+   #. If a row does not consist entirely of zeros, then the first nonzero
+      number in the row is a 1. We call this a **leading 1**.
+
+   #. If there are any rows that consist entirely of zeros, then they are
+      grouped together at the bottom of the matrix.
+
+   #. In any two successive rows that do not consist entirely of zeros, the
+      leading 1 in the lower row occurs farther to the right than the
+      leading 1 in the higher row.
+
+.. proof:definition:: reduced row echelon form
+
+   A row echelon row form matrix is in **reduced row echelon form** if each
+   column that contains a leading 1 has zeros everywhere else in that
+   column.
+
+.. proof:definition:: leading variables and free variables
+
+   In a linear system, the variables corresponding to the leading 1’s in
+   the augmented matrix, we call these the **leading variables**. The
+   remaining variables are called **free variables**.
+
+.. proof:example::
+
+   Are the following matrices in row echelon form? If so, are they in
+   reduced row echelon form?
+
+   
+   .. multicol::
+      :columns: 2
+
+      #) :math:`\begin{bmatrix}      1&0&0&4\\      0&1&0&7\\      0&0&1&-1   \end{bmatrix}`
+
+      #) :math:`\begin{bmatrix}     1&0&0\\     0&1&0\\     0&0&1  \end{bmatrix}`
+            
+      #) :math:`\begin{bmatrix}     1&4&-3&7\\     0&1&6&2\\     0&0&1&5  \end{bmatrix}`
+            
+      #) :math:`\begin{bmatrix}     1&1&0\\     0&1&0\\     0&0&0  \end{bmatrix}`
+            
+      #) :math:`\begin{bmatrix}      0&1&2&6&0\\      0&0&1&-1&0\\      0&0&0&0&1   \end{bmatrix}`
+            
+      #) :math:`\begin{bmatrix}      0&-1&2&0&1\\      0&0&0&1&3\\      0&0&0&0&0\\      0&0&0&0&0   \end{bmatrix}`
+            
+      #) :math:`\begin{bmatrix}       0&0\\       0&0    \end{bmatrix}`
+            
+      #) :math:`\begin{bmatrix}     0&1\\     1&0  \end{bmatrix}`
+
+.. proof:example::
+
+   Suppose that the augmented matrix for a linear system in the unknowns :math:`x_1,x_2,x_3` and :math:`x_4` has been reduced by elementary row
+   operations to
+
+   .. math::
+
+      \begin{bmatrix}
+            1&0&0&0&3\\
+            0&1&0&0&-1\\
+            0&0&1&0&0\\
+            0&0&0&1&5
+      \end{bmatrix}
+
+   Find the solution of the linear system.
+
+.. proof:example::
+
+   In each part, suppose that the augmented matrix for a linear system in the unknowns *x*, *y*, and *z* has been reduced by elementary row
+   operations to the given reduced row echelon form. Solve the system.
+
+   .. multicol::
+      :columns: 3
+
+      (a) :math:`\begin{bmatrix}      1&0&0&0\\      0&1&2&0\\      0&0&0&1    \end{bmatrix}`
+      (b) :math:`\begin{bmatrix}      1&0&3&-1\\      0&1&-4&2\\      0&0&0&0    \end{bmatrix}`
+      (c) :math:`\begin{bmatrix}      1&-5&1&4\\      0&0&0&0\\      0&0&0&0    \end{bmatrix}`
+
+
+Elimination Methods
+===================
+
+We have just seen how easy it is to solve a system of linear equations
+once its augmented matrix is in reduced row echelon form. Now we will
+give a step-by-step elimination procedure that can be used to reduce any
+matrix to reduced row echelon form.
+
+.. proof:example::
+
+   Reduce the following matrix to reduced row echelon form.
+
+   .. math::
+
+      \begin{bmatrix}
+         0&0& -2&0& 7&12\\
+         2&4&-10&6&12&28\\
+         2&4& -5&6&-5&-1
+      \end{bmatrix}
+
+   .. toggle-header::
+      :header: **Solution:**
+
+      #. Locate the leftmost column that does not consist entirely of zeros.
+      #. Interchange the top row with another row, if necessary, to bring a nonzero entry to the top of the column found in Step 1.
+      #. If the entry that is now at the top of the column found in Step 1 is :math:`a`, multiply the first row by :math:`\frac{1}{a}` in order to introduce a leading 1.
+      #. Add suitable multiples of the top row to the rows below so that all entries below the leading 1 become zeros.
+      #. Now cover the top row in the matrix and begin again with Step 1 applied to the submatrix that remains. Continue in this way until the entire matrix is in row echelon form.
+      #. Beginning with the last nonzero row and working upward, add suitable multiples of each row to the rows above to introduce zeros above the leading 1’s.
+
+.. proof:definition::
+
+   Step 1-5 produces a row echelon form and is called **Gaussian elimination**. Step 1-6 produces a reduced row echelon form and is called **Gaussian-Jordan elimination**.
+
+.. proof:example::
+
+   Solve by Gauss–Jordan elimination.
+
+   .. math::
+
+      \begin{aligned}
+         x_1+3x_2-2x_3+2x_5&=0\\
+         2x_1+6x_2-5x_3-2x_4+4x_5-3x_6&=-1\\
+         5x_3+10x_4+15x_6&=5\\
+         2x_1+6x_2+8x_4+4x_5+18x_6&=6
+      \end{aligned}
+
+
+Homogeneous Linear Systems
+==========================
+
+.. proof:definition::
+
+   A system of linear equations is said to be **homogeneous** if the
+   constant terms are all zero; that is, the system has the form
+
+   .. math::
+      :label: ax=0
+
+      \begin{aligned}
+         a_{11}x_1+a_{12}x_2+\cdots+a_{1n}x_n&=0\\
+         a_{21}x_1+a_{22}x_2+\cdots+a_{2n}x_n&=0\\
+         \vdots\\
+         a_{m1}x_1+a_{m2}x_2+\cdots+a_{mn}x_n&=0
+      \end{aligned}
+
+.. proof:definition::
+
+   Since the m-tuple :math:`(0,0,\cdots,0)` is a solution of :eq:`ax=0`, every homogeneous system of linear equations is
+   consistent. This solution is called the **trivial solution**; if there
+   are other solutions, they are called **nontrivial solutions**.
+
+.. note::
+
+   Because a homogeneous linear system always has the trivial solution,
+   there are only two possibilities for its solutions:
+
+   -  The system has only the trivial solution.
+
+   -  The system has infinitely many solutions in addition to the trivial
+      solution.
+
+.. proof:example::
+
+   Use Gauss–Jordan elimination to solve the homogeneous linear system
+
+   .. math::
+
+      \begin{aligned}
+            x_1+3x_2-2x_3+2x_5&=0\\
+            2x_1+6x_2-5x_3-2x_4+4x_5-3x_6&=0\\
+            5x_3+10x_4+15x_6&=0\\
+            2x_1+6x_2+8x_4+4x_5+18x_6&=0
+         \end{aligned}
+
+.. proof:theorem::
+
+   If a homogeneous linear system has n unknowns, and if the reduced row
+   echelon form of its augmented matrix has r nonzero rows, then the system
+   has :math:`n-r` free variables.
+
+.. proof:theorem::
+
+   A homogeneous linear system with more unknowns than equations has
+   infinitely many solutions.
+
+There are three facts about row echelon forms and reduced row echelon
+forms:
+
+-  Every matrix has a unique reduced row echelon form.
+
+-  Row echelon forms are not unique.
+
+-  Although row echelon forms are not unique, the reduced row echelon
+   form and all row echelon forms of a matrix *A* have the same number
+   of zero rows, and the leading 1’s always occur in the same positions.
+   Those are called the **pivot positions** of *A*. A column that contains a pivot position is called a **pivot column** of *A*.
+

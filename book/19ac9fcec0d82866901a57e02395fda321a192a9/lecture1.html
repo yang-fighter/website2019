@@ -1,0 +1,612 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>1. Systems of Linear Equations &mdash; Linear Algebra  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/contentui.js"></script>
+        <script src="_static/proof.js"></script>
+        <script >MathJax = {
+        loader: {load: ['a11y/semantic-enrich']},
+        options: {
+            enrichSpeech: 'shallow',  // one of: 'deep', 'shallow', or 'none'
+            renderActions: {
+                //
+                // Force speech enrichment regardless of the menu settings
+                //
+                enrich: {'[+]': [
+                function (doc) {doc.enrich(true)},
+                function (math, doc) {math.enrich(doc, true)}  
+                ]}
+            }
+        },
+        tex: {
+            tags: 'none'  // should be 'ams', 'none', or 'all'
+        }
+};</script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  <link rel="stylesheet" href="_static/contentui.css" type="text/css" />
+  <link rel="stylesheet" href="_static/proof.css" type="text/css" />
+  <link rel="stylesheet" href="_static/multicol.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="2. Gaussian Elimination" href="lecture2.html" />
+    <link rel="prev" title="Welcome to Linear Algebra’s documentation!" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Linear Algebra
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">1. Systems of Linear Equations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#linear-equation">1.1. Linear Equation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#system-of-linear-equations">1.2. System of Linear Equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#solutions-for-linear-systems">1.3. Solutions for Linear Systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#augmented-matrices-and-elementary-row-operations">1.4. Augmented Matrices and Elementary Row Operations</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="lecture2.html">2. Gaussian Elimination</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Linear Algebra</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li><span class="section-number">1. </span>Systems of Linear Equations</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="systems-of-linear-equations">
+<h1><span class="section-number">1. </span>Systems of Linear Equations<a class="headerlink" href="#systems-of-linear-equations" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="linear-equation">
+<h2><span class="section-number">1.1. </span>Linear Equation<a class="headerlink" href="#linear-equation" title="Permalink to this headline">¶</a></h2>
+<div class="proof proof-type-definition" id="id1">
+
+    <div class="proof-title">
+        <span class="proof-type">Definition 1.1</span>
+        
+    </div><div class="proof-content">
+<p>Generally, we define a <strong>linear equation</strong> in the <em>n</em> variables \(x_1,x_2,\cdots,x_n\) to be one that can be expressed in the form \(a_1 x_1+a_2 x_2+\cdots+a_n x_n=b\). The terms \(a_1,a_2,\cdots,a_n\) are called <strong>coefficients</strong>, and \(x_1,x_2,\cdots,x_n\) are called <strong>unknowns</strong>. If \(b=0\), the linear equation is called <strong>homogeneous</strong>.</p>
+</div></div><div class="proof proof-type-example" id="id2">
+
+    <div class="proof-title">
+        <span class="proof-type">Example 1.2</span>
+        
+    </div><div class="proof-content">
+<p>Find all linear equations.</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+\begin{split}\begin{aligned}
+   (1)&\ x+3y=7 &\quad (5)&\ x_1-2x_2-3x_3+x_4=0 \\
+   (2)&\ \frac{1}{2}x-y+3z=-1 &\quad (6)&\ x_1+x_2+\cdots+x_n=1\\
+   (3)&\ x+3y^2=4 &\quad (7)&\ 3x+2y-xy=5\\
+   (4)&\ \sin{x} +y=0 &\quad (8)&\ \sqrt{x_1}+2x_2+x_3=1
+\end{aligned}\end{split}
+\end{equation*}</div>
+<div class="toggle-header docutils container">
+<p><strong>Solution:</strong></p>
+</div>
+<div class="toggle-content docutils container">
+<p>The equation (1), (2), (5), and (6) are linear equations.</p>
+</div>
+</div></div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>\(ax+by=c\) represents a straight line in <em>xy</em> plane;  \(ax+by+cz=d\) represents a plane in <em>xyz</em> space.</p>
+</div>
+</div>
+<div class="section" id="system-of-linear-equations">
+<h2><span class="section-number">1.2. </span>System of Linear Equations<a class="headerlink" href="#system-of-linear-equations" title="Permalink to this headline">¶</a></h2>
+<p>The system of linear equations (sometimes called linear system) consists of one or more linear equations and can be expressed in the form</p>
+<div class="math notranslate nohighlight" id="equation-mneq">
+\begin{equation}\label{equation:lecture1:mnEq}\tag{1.1}
+\begin{split}\begin{aligned}
+   a_{11}x_1+a_{12}x_2+\cdots+a_{1n}x_n&=b_1\\
+   a_{21}x_1+a_{22}x_2+\cdots+a_{2n}x_n&=b_2\\
+   \vdots\\
+   a_{m1}x_1+a_{m2}x_2+\cdots+a_{mn}x_n&=b_m
+\end{aligned}\end{split}
+\end{equation}</div>
+<p>For example,</p>
+<div class="math notranslate nohighlight" id="equation-ex1">
+\begin{equation}\label{equation:lecture1:ex1}\tag{1.2}
+\begin{split}\begin{aligned}
+   5x+y&=3\\
+   2x-y&=4
+\end{aligned}\end{split}
+\end{equation}</div>
+<p>is a linear system in two unknowns, and</p>
+<div class="math notranslate nohighlight" id="equation-ex2">
+\begin{equation}\label{equation:lecture1:ex2}\tag{1.3}
+\begin{split}\begin{aligned}
+   4x_1-x_2+3x_3&=-1\\
+   3x_1+x_2+9x_3&=-4
+\end{aligned}\end{split}
+\end{equation}</div>
+<p>is a linear system in three unknowns.</p>
+</div>
+<div class="section" id="solutions-for-linear-systems">
+<h2><span class="section-number">1.3. </span>Solutions for Linear Systems<a class="headerlink" href="#solutions-for-linear-systems" title="Permalink to this headline">¶</a></h2>
+<p>Suppose \(x_1=s_1, x_2=s_2,\cdots,x_n=s_n\) (\(s_1,s_2,\cdots,s_n\) are real numbers) make each equation in <a class="reference internal" href="#equation-mneq">Eq (1.1)</a> holds true, then the <strong>ordered n-tuple</strong> \((s_1,s_2,\cdots,s_n)\)
+is a solution of <a class="reference internal" href="#equation-mneq">Eq (1.1)</a>. For example, \((1,-2)\) is the solution of <a class="reference internal" href="#equation-ex1">Eq (1.2)</a> and \((1,2,-1)\) is a solution of <a class="reference internal" href="#equation-ex2">Eq (1.3)</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Every system of linear equations has zero, one, or infinitely many solutions. There are no other possibilities.</p>
+</div>
+<p>In general, we say that a linear system is <strong>consistent</strong> if it has at least one solution and <strong>inconsistent</strong> if it has no solutions.</p>
+<div class="figure" id="id3" style="text-align: center">
+<p><img src="_images/tikz-92067c9dd8d12f4bf5d0ffb59d50fbd33b9f915c.svg" alt="This is a figure." /></p>
+<p class="caption"><span class="caption-number">Fig. 1.1 </span><span class="caption-text">No solution</span></p>
+</div><div class="figure" id="id4" style="text-align: center">
+<p><img src="_images/tikz-3d81570d75d3ec097f25a8fe727e1d10cb212d1f.svg" alt="This is a figure." /></p>
+<p class="caption"><span class="caption-number">Fig. 1.2 </span><span class="caption-text">One solution</span></p>
+</div><div class="figure" id="id5" style="text-align: center">
+<p><img src="_images/tikz-dfad4aed7306c1613848dd1882bad89282260c2b.svg" alt="This is a figure." /></p>
+<p class="caption"><span class="caption-number">Fig. 1.3 </span><span class="caption-text">Infinitely many solutions (coincident lines)</span></p>
+</div><div class="proof proof-type-example" id="id6">
+
+    <div class="proof-title">
+        <span class="proof-type">Example 1.3</span>
+        
+    </div><div class="proof-content">
+<p>Solve the linear systems</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+\begin{split}\begin{aligned}
+   x-y&=1\\
+   2x+y&=5
+\end{aligned}\end{split}
+\end{equation*}</div>
+<div class="toggle-header docutils container">
+<p><strong>Solution:</strong></p>
+</div>
+<div class="toggle-content docutils container">
+<p>We can eliminate \(x\) from the second equation by adding \(-2\) times the first equation to the second. This yields</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+\begin{split}\begin{aligned}
+   x-y&=1\\
+   3y&=3
+\end{aligned}\end{split}
+\end{equation*}</div>
+<p>From the second equation we obtain \(y=1\), and by substituting it in the first equation we obtain \(x=2\). Thus, the system has the unique solution</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+\begin{split}x&=2\\
+y&=1\end{split}
+\end{equation*}</div>
+</div>
+</div></div><div class="proof proof-type-example" id="id7">
+
+    <div class="proof-title">
+        <span class="proof-type">Example 1.4</span>
+        
+    </div><div class="proof-content">
+<p>Solve the linear systems</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+\begin{split}\begin{aligned}
+   x+y&=1\\
+   3x+3y&=9
+\end{aligned}\end{split}
+\end{equation*}</div>
+<div class="toggle-header docutils container">
+<p><strong>Solution:</strong></p>
+</div>
+<div class="toggle-content docutils container">
+<p>We can eliminate \(x\) from the second equation by adding \(-3\) times the first equation to the second. This yields</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+\begin{split}\begin{aligned}
+   x+y&=1\\
+   0&=6
+\end{aligned}\end{split}
+\end{equation*}</div>
+<p>The second equation is contradictory, hence this linear system has no solution.</p>
+</div>
+</div></div><div class="proof proof-type-example" id="id8">
+
+    <div class="proof-title">
+        <span class="proof-type">Example 1.5</span>
+        
+    </div><div class="proof-content">
+<p>Solve the linear systems</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+\begin{split}\begin{aligned}
+   4x-2y&=2\\
+   2x-y&=1
+\end{aligned}\end{split}
+\end{equation*}</div>
+<div class="toggle-header docutils container">
+<p><strong>Solution:</strong></p>
+</div>
+<div class="toggle-content docutils container">
+<p>We can eliminate \(x\) from the second equation by adding \(-1/2\) times the first equation to the second. This yields</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+\begin{split}\begin{aligned}
+   4x-2y&=2\\
+   0&=0
+\end{aligned}\end{split}
+\end{equation*}</div>
+<p>The second equation does not impose any restrictions on \(x\) and hence can be omitted. Thus, the solution of the system are those values of \(x\) that satisfy the equation</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+\begin{split}4x-2y=2\end{split}
+\end{equation*}</div>
+<p>Then we obtain can express the solution by two parametric equations</p>
+<div class="math notranslate nohighlight">
+\begin{align*} \!\begin{aligned}
+x&=\frac{1}{2}+\frac{1}{2}t\\
+y&=t\\
+\end{aligned}\end{align*}</div>
+</div>
+</div></div><div class="proof proof-type-example" id="id9">
+
+    <div class="proof-title">
+        <span class="proof-type">Example 1.6</span>
+        
+    </div><div class="proof-content">
+<p>Solve the linear systems</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+\begin{split}\begin{aligned}
+   x-y+2z&=5\\
+   2x-2y+4z&=10\\
+   3x-3y+6z&=15
+\end{aligned}\end{split}
+\end{equation*}</div>
+<div class="toggle-header docutils container">
+<p><strong>Solution:</strong></p>
+</div>
+<div class="toggle-content docutils container">
+<p>This equation can be solved by inspection, since the second and third equations are multiples of the first. Thus, there is only one restriction for \(x\), \(y\) and \(z\)</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+\begin{split}x-y+2z=5\end{split}
+\end{equation*}</div>
+<p>Then we can obtain the solution in parametric form</p>
+<div class="math notranslate nohighlight">
+\begin{align*} \!\begin{aligned}
+x&=5+r-2s\\
+y&=r\\
+z&=s\\
+\end{aligned}\end{align*}</div>
+</div>
+</div></div></div>
+<div class="section" id="augmented-matrices-and-elementary-row-operations">
+<h2><span class="section-number">1.4. </span>Augmented Matrices and Elementary Row Operations<a class="headerlink" href="#augmented-matrices-and-elementary-row-operations" title="Permalink to this headline">¶</a></h2>
+<p>Consider the general form of linear system in <a class="reference internal" href="#equation-mneq">Eq (1.1)</a>,</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+\begin{split}\begin{aligned}
+   a_{11}x_1+a_{12}x_2+\cdots+a_{1n}x_n&=b_1\\
+   a_{21}x_1+a_{22}x_2+\cdots+a_{2n}x_n&=b_2\\
+   \cdots\\
+   a_{m1}x_1+a_{m2}x_2+\cdots+a_{mn}x_n&=b_m
+\end{aligned}\end{split}
+\end{equation*}</div>
+<p>if we take all coefficients and constants out and put them in an array, we will have the <strong>augmented matrix</strong> of this linear system,</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+\begin{split}\begin{bmatrix}
+    a_{11}&a_{12}&\cdots&a_{1n}&b_1\\
+    a_{21}&a_{22}&\cdots&a_{2n}&b_2\\
+    \vdots&\vdots&&\vdots&\vdots\\
+    a_{m1}&a_{m2}&\cdots&a_{mn}&b_m
+\end{bmatrix}\end{split}
+\end{equation*}</div>
+<p>For example, the augmented matrix for the system of equations</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+\begin{split}\begin{aligned}
+   x_1+x_2+2x_3&=9\\
+   2x_1+4x_2-3x_3&=1\\
+   3x_1+6x_2-5x_3&=0
+\end{aligned}\end{split}
+\end{equation*}</div>
+<p>is</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+\begin{split}\begin{bmatrix}
+      1&1&2&9\\
+      2&4&-3&1\\
+      3&6&-5&0
+\end{bmatrix}\end{split}
+\end{equation*}</div>
+<p>The basic method for solving a linear system is to perform algebraic
+operations on the system that do not alter the solution set and that
+produce a succession of increasingly simpler systems, until a point is reached where it can be ascertained whether the system is consistent, and if so, what its solutions are. Typically, the algebraic operations are:</p>
+<blockquote class="highlights">
+<div><ol class="arabic simple">
+<li><p>Multiply an equation through by a nonzero constant.</p></li>
+<li><p>Interchange two equations.</p></li>
+<li><p>Add a constant times one equation to another.</p></li>
+</ol>
+</div></blockquote>
+<p>Since the rows (horizontal lines) of an augmented matrix correspond to the equations in the associated system, these three operations correspond to the following operations on the rows of the augmented matrix:</p>
+<blockquote class="highlights">
+<div><ol class="arabic simple">
+<li><p>Multiply a row through by a nonzero constant.</p></li>
+<li><p>Interchange two rows.</p></li>
+<li><p>Add a constant times one row to another.</p></li>
+</ol>
+</div></blockquote>
+<p>These are called <strong>elementary row operations</strong> on a matrix.</p>
+<div class="proof proof-type-example" id="id10">
+
+    <div class="proof-title">
+        <span class="proof-type">Example 1.7</span>
+        
+    </div><div class="proof-content">
+<p>Use elementary row operations and the augmented matrix to solve the linear system</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+\begin{split}\begin{aligned}
+   x_1+x_2+2x_3&=9\\
+   2x_1+4x_2-3x_3&=1\\
+   3x_1+6x_2-5x_3&=0
+\end{aligned}\end{split}
+\end{equation*}</div>
+<div class="toggle-header docutils container">
+<p><strong>Solution:</strong></p>
+</div>
+<div class="toggle-content docutils container">
+<p>The augmented matrix is</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+\begin{split}\begin{bmatrix}
+      1&1&2&9\\
+      2&4&-3&1\\
+      3&6&-5&0
+\end{bmatrix}\end{split}
+\end{equation*}</div>
+<p>Add \(-2\) times the first row to the second row and add \(-3\) times the first row to the third row yield</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+\begin{split}\begin{bmatrix}
+      1&1&2&9\\
+      0&2&-7&-17\\
+      0&3&-11&-27
+\end{bmatrix}\end{split}
+\end{equation*}</div>
+<p>Multiply the second row by \(1/2\) yields</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+\begin{split}\begin{bmatrix}
+      1&1&2&9\\
+      0&1&-7/2&-17/2\\
+      0&3&-11&-27
+\end{bmatrix}\end{split}
+\end{equation*}</div>
+<p>Add \(-3\) times the second row to the third row yields</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+\begin{split}\begin{bmatrix}
+      1&1&2&9\\
+      0&1&-7/2&-17/2\\
+      0&0&-1/2&-3/2
+\end{bmatrix}\end{split}
+\end{equation*}</div>
+<p>Multiply the third row by \(-2\) yields</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+\begin{split}\begin{bmatrix}
+      1&1&2&9\\
+      0&1&-7/2&-17/2\\
+      0&0&1&3
+\end{bmatrix}\end{split}
+\end{equation*}</div>
+<p>Add \(-1\) times the second row to the first yields</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+\begin{split}\begin{bmatrix}
+      1&0&11/2&35/2\\
+      0&1&-7/2&-17/2\\
+      0&0&1&3
+\end{bmatrix}\end{split}
+\end{equation*}</div>
+<p>Add \(-11/2\) times the third row to the first and \(7/2\) times the third row to the second yield</p>
+<div class="math notranslate nohighlight">
+\begin{equation*}
+\begin{split}\begin{bmatrix}
+      1&0&0&1\\
+      0&1&0&2\\
+      0&0&1&3
+\end{bmatrix}\end{split}
+\end{equation*}</div>
+<p>Thus, the solution is</p>
+<div class="math notranslate nohighlight">
+\begin{align*} \!\begin{aligned}
+x&=1\\
+y&=2\\
+z&=3\\
+\end{aligned}\end{align*}</div>
+</div>
+</div></div></div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="lecture2.html" class="btn btn-neutral float-right" title="2. Gaussian Elimination" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to Linear Algebra’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Yong Yang.
+      <span class="lastupdated">
+        Last updated on Mar 25, 2020.
+      </span>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Downloads</span>
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+      <dl>
+        <dt><a href="Linear Algebra.pdf" target="_blank">PDF (without accessibility)</a></dt>
+      </dl>
+    </div>
+  </div>
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,394 @@
+======================================
+Systems of Linear Equations
+======================================
+
+Linear Equation
+===============
+
+.. proof:definition::
+
+   Generally, we define a **linear equation** in the *n* variables :math:`x_1,x_2,\cdots,x_n` to be one that can be expressed in the form :math:`a_1 x_1+a_2 x_2+\cdots+a_n x_n=b`. The terms :math:`a_1,a_2,\cdots,a_n` are called **coefficients**, and :math:`x_1,x_2,\cdots,x_n` are called **unknowns**. If :math:`b=0`, the linear equation is called **homogeneous**.
+
+.. proof:example::
+
+   Find all linear equations.
+
+   .. math::
+
+      \begin{aligned}
+         (1)&\ x+3y=7 &\quad (5)&\ x_1-2x_2-3x_3+x_4=0 \\
+         (2)&\ \frac{1}{2}x-y+3z=-1 &\quad (6)&\ x_1+x_2+\cdots+x_n=1\\
+         (3)&\ x+3y^2=4 &\quad (7)&\ 3x+2y-xy=5\\
+         (4)&\ \sin{x} +y=0 &\quad (8)&\ \sqrt{x_1}+2x_2+x_3=1
+      \end{aligned}
+
+   .. toggle-header::
+      :header: **Solution:**
+
+      The equation (1), (2), (5), and (6) are linear equations.
+
+.. note::
+   :math:`ax+by=c` represents a straight line in *xy* plane;  :math:`ax+by+cz=d` represents a plane in *xyz* space.
+
+System of Linear Equations
+==========================
+
+The system of linear equations (sometimes called linear system) consists of one or more linear equations and can be expressed in the form
+
+.. math::
+   :label: mnEq
+
+   \begin{aligned}
+      a_{11}x_1+a_{12}x_2+\cdots+a_{1n}x_n&=b_1\\
+      a_{21}x_1+a_{22}x_2+\cdots+a_{2n}x_n&=b_2\\
+      \vdots\\
+      a_{m1}x_1+a_{m2}x_2+\cdots+a_{mn}x_n&=b_m
+   \end{aligned}
+
+For example,
+
+.. math::
+   :label: ex1
+
+   \begin{aligned}
+      5x+y&=3\\
+      2x-y&=4
+   \end{aligned}
+
+is a linear system in two unknowns, and
+
+.. math::
+   :label: ex2
+
+   \begin{aligned}
+      4x_1-x_2+3x_3&=-1\\
+      3x_1+x_2+9x_3&=-4
+   \end{aligned}
+
+is a linear system in three unknowns.
+
+Solutions for Linear Systems
+============================
+
+Suppose :math:`x_1=s_1, x_2=s_2,\cdots,x_n=s_n` (:math:`s_1,s_2,\cdots,s_n` are real numbers) make each equation in :eq:`mnEq` holds true, then the **ordered n-tuple** :math:`(s_1,s_2,\cdots,s_n)`
+is a solution of :eq:`mnEq`. For example, :math:`(1,-2)` is the solution of :eq:`ex1` and :math:`(1,2,-1)` is a solution of :eq:`ex2`.
+
+.. note::
+   Every system of linear equations has zero, one, or infinitely many solutions. There are no other possibilities.
+
+In general, we say that a linear system is **consistent** if it has at least one solution and **inconsistent** if it has no solutions.
+
+
+.. tikz:: No solution
+
+   \draw[->] (-2,0) -- (2,0) node[right] {$x$};
+   \draw[->] (0,-1) -- (0,3) node[above] {$y$};
+   \node[below left] at (0,0) {0};
+   \draw[very thick, blue] (-2,1) -- (2,3);
+   \draw[very thick, red] (-2,0) -- (2,2);
+
+
+.. tikz:: One solution
+
+   \draw[->] (-2,0) -- (2,0) node[right] {$x$};
+   \draw[->] (0,-1) -- (0,3) node[above] {$y$};
+   \node[below left] at (0,0) {0};
+   \draw[very thick, blue] (-2,-1) -- (2,3);
+   \draw[very thick, red] (-2,0.5) -- (2,2.5);
+   \fill (1,2) circle (2pt) node[above left] {$P$};
+
+
+.. tikz:: Infinitely many solutions (coincident lines)
+
+   \draw[->] (-2,0) -- (2,0) node[right] {$x$};
+   \draw[->] (0,-1) -- (0,3) node[above] {$y$};
+   \node[below left] at (0,0) {0};
+   \draw[very thick, blue] (-2,-1) -- (2,3);
+
+.. proof:example::
+
+   Solve the linear systems
+
+   .. math::
+
+      \begin{aligned}
+         x-y&=1\\
+         2x+y&=5
+      \end{aligned}
+
+   .. toggle-header::
+      :header: **Solution:**
+
+      We can eliminate :math:`x` from the second equation by adding :math:`-2` times the first equation to the second. This yields
+      
+      .. math::
+
+         \begin{aligned}
+            x-y&=1\\
+            3y&=3
+         \end{aligned}
+
+      From the second equation we obtain :math:`y=1`, and by substituting it in the first equation we obtain :math:`x=2`. Thus, the system has the unique solution
+
+      .. math::
+      
+         x&=2\\
+         y&=1
+
+.. proof:example::
+
+   Solve the linear systems
+
+   .. math::
+
+      \begin{aligned}
+         x+y&=1\\
+         3x+3y&=9
+      \end{aligned}
+
+   .. toggle-header::
+      :header: **Solution:**
+
+      We can eliminate :math:`x` from the second equation by adding :math:`-3` times the first equation to the second. This yields
+      
+      .. math::
+
+         \begin{aligned}
+            x+y&=1\\
+            0&=6
+         \end{aligned}
+
+      The second equation is contradictory, hence this linear system has no solution.
+
+.. proof:example::
+
+   Solve the linear systems
+
+   .. math::
+
+      \begin{aligned}
+         4x-2y&=2\\
+         2x-y&=1
+      \end{aligned}
+
+   .. toggle-header::
+      :header: **Solution:**
+
+      We can eliminate :math:`x` from the second equation by adding :math:`-1/2` times the first equation to the second. This yields
+      
+      .. math::
+
+         \begin{aligned}
+            4x-2y&=2\\
+            0&=0
+         \end{aligned}
+
+      The second equation does not impose any restrictions on :math:`x`and :math:`y` and hence can be omitted. Thus, the solution of the system are those values of :math:`x`and :math:`y` that satisfy the equation 
+      
+      .. math::
+      
+         4x-2y=2
+
+      Then we obtain can express the solution by two parametric equations
+
+      .. math::
+      
+         x&=\frac{1}{2}+\frac{1}{2}t
+
+         y&=t
+
+.. proof:example::
+
+   Solve the linear systems
+
+   .. math::
+
+      \begin{aligned}
+         x-y+2z&=5\\
+         2x-2y+4z&=10\\
+         3x-3y+6z&=15
+      \end{aligned}
+
+   .. toggle-header::
+      :header: **Solution:**
+
+      This equation can be solved by inspection, since the second and third equations are multiples of the first. Thus, there is only one restriction for :math:`x`, :math:`y` and :math:`z`
+
+      .. math::
+      
+         x-y+2z=5
+
+      Then we can obtain the solution in parametric form
+
+      .. math::
+      
+         x&=5+r-2s
+
+         y&=r
+
+         z&=s
+
+
+Augmented Matrices and Elementary Row Operations
+================================================
+
+Consider the general form of linear system in :eq:`mnEq`,
+
+.. math::
+
+   \begin{aligned}
+      a_{11}x_1+a_{12}x_2+\cdots+a_{1n}x_n&=b_1\\
+      a_{21}x_1+a_{22}x_2+\cdots+a_{2n}x_n&=b_2\\
+      \cdots\\
+      a_{m1}x_1+a_{m2}x_2+\cdots+a_{mn}x_n&=b_m
+   \end{aligned}
+
+if we take all coefficients and constants out and put them in an array, we will have the **augmented matrix** of this linear system,
+
+
+.. math::
+
+   \begin{bmatrix}
+       a_{11}&a_{12}&\cdots&a_{1n}&b_1\\
+       a_{21}&a_{22}&\cdots&a_{2n}&b_2\\
+       \vdots&\vdots&&\vdots&\vdots\\
+       a_{m1}&a_{m2}&\cdots&a_{mn}&b_m
+   \end{bmatrix}
+
+For example, the augmented matrix for the system of equations
+
+.. math::
+
+   \begin{aligned}
+      x_1+x_2+2x_3&=9\\
+      2x_1+4x_2-3x_3&=1\\
+      3x_1+6x_2-5x_3&=0
+   \end{aligned}
+
+is
+
+.. math::
+
+   \begin{bmatrix}
+         1&1&2&9\\
+         2&4&-3&1\\
+         3&6&-5&0
+   \end{bmatrix}
+
+The basic method for solving a linear system is to perform algebraic
+operations on the system that do not alter the solution set and that
+produce a succession of increasingly simpler systems, until a point is reached where it can be ascertained whether the system is consistent, and if so, what its solutions are. Typically, the algebraic operations are:
+
+.. highlights::
+   #. Multiply an equation through by a nonzero constant.
+
+   #. Interchange two equations.
+
+   #. Add a constant times one equation to another.
+
+Since the rows (horizontal lines) of an augmented matrix correspond to the equations in the associated system, these three operations correspond to the following operations on the rows of the augmented matrix:
+
+.. highlights::
+   #. Multiply a row through by a nonzero constant.
+
+   #. Interchange two rows.
+
+   #. Add a constant times one row to another.
+
+These are called **elementary row operations** on a matrix.
+
+.. proof:example::
+
+   Use elementary row operations and the augmented matrix to solve the linear system
+
+   .. math::
+
+      \begin{aligned}
+         x_1+x_2+2x_3&=9\\
+         2x_1+4x_2-3x_3&=1\\
+         3x_1+6x_2-5x_3&=0
+      \end{aligned}
+
+   .. toggle-header::
+      :header: **Solution:**
+
+      The augmented matrix is
+
+      .. math::
+
+         \begin{bmatrix}
+               1&1&2&9\\
+               2&4&-3&1\\
+               3&6&-5&0
+         \end{bmatrix}
+
+      Add :math:`-2` times the first row to the second row and add :math:`-3` times the first row to the third row yield
+
+      .. math::
+
+         \begin{bmatrix}
+               1&1&2&9\\
+               0&2&-7&-17\\
+               0&3&-11&-27
+         \end{bmatrix}
+
+      Multiply the second row by :math:`1/2` yields
+
+      .. math::
+
+         \begin{bmatrix}
+               1&1&2&9\\
+               0&1&-7/2&-17/2\\
+               0&3&-11&-27
+         \end{bmatrix} 
+
+      Add :math:`-3` times the second row to the third row yields
+
+      .. math::
+
+         \begin{bmatrix}
+               1&1&2&9\\
+               0&1&-7/2&-17/2\\
+               0&0&-1/2&-3/2
+         \end{bmatrix} 
+
+      Multiply the third row by :math:`-2` yields
+
+      .. math::
+
+         \begin{bmatrix}
+               1&1&2&9\\
+               0&1&-7/2&-17/2\\
+               0&0&1&3
+         \end{bmatrix}
+
+      Add :math:`-1` times the second row to the first yields
+
+      .. math::
+
+         \begin{bmatrix}
+               1&0&11/2&35/2\\
+               0&1&-7/2&-17/2\\
+               0&0&1&3
+         \end{bmatrix} 
+
+      Add :math:`-11/2` times the third row to the first and :math:`7/2` times the third row to the second yield
+      
+      .. math::
+
+         \begin{bmatrix}
+               1&0&0&1\\
+               0&1&0&2\\
+               0&0&1&3
+         \end{bmatrix}
+
+      Thus, the solution is
+
+      .. math::
+      
+         x&=1
+
+         y&=2
+
+         z&=3
+
