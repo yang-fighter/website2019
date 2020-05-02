@@ -137,3 +137,7 @@
 .card-deck .card {
   min-width: 220px;
 }
+
+.blur {
+  filter: blur(3px);
+}

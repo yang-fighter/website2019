@@ -7,51 +7,7 @@
  */
 
 $( document ).ready(function() {
-  // Preloader Configuration
-  $('.preloader').delay(1000).fadeOut(1000);
-  // Add smooth scrolling on all links inside the navbar
-  $(".navbar a").on('click', function(event) {
-    // Make sure this.hash has a value before overriding default behavior
-    if (this.hash !== "") {
-      // Prevent default anchor click behavior
-      event.preventDefault();
-      // Store hash
-      var hash = this.hash;
-      // Using jQuery's animate() method to add smooth page scroll
-      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-      $('html, body').animate({
-       scrollTop: $(hash).offset().top
-      }, 800, function(){
-       // Add hash (#) to URL when done scrolling (default click behavior)
-       window.location.hash = hash;
-      });
-      // Hide navbar collapse after click.
-      $('.navbar-collapse').collapse('hide');
-    } // End if
-  });
-
-  // Change navbar style after scrolling down.
-  $(window).scroll(
-    function() {
-      if ($(".navbar").offset().top > 100) {
-        $(".navbar").addClass("top-navbar");
-      } else {
-        $(".navbar").removeClass("top-navbar");
-      }
-    }
-   );
-
-  // Use typed.js.
-  $(function() {
-    var typed = new Typed(".element", {
-      strings: ["I am Yong Yang.", "I am a Teacher.", "I am a Researcher.", "I am a Professor."],
-      smartBackspace: true, // Default value
-      typeSpeed: 50,
-      loop: true,
-    });
-  });
-
-  // Use ajax to parse publication.json into publications section.
+   // Use ajax to parse publication.json into publications section.
   $.ajax({
     type: "GET",
     url:"includes/publication.json",
@@ -62,7 +18,12 @@ $( document ).ready(function() {
       var html = compiledTemplate(data);
       $(".paper").append(html);
 
-  
+      // Startup MixItUp
+      var mixer = mixitup(".paper",{
+        selectors: {
+          control: '[data-mixitup-control]'
+        }
+      });
 
     }
   });

@@ -78,14 +78,14 @@
             </p>
             <p class="h3 px-5 py-3 text-white">
               I am an Assistant Professor of West A&M University. I teach
-              Calculus, Linear Algebra, and Numerical Analysis. My research
+              Calculus, Linear Algebra, Numerical Analysis, and Data Science. My research
               interests are turbulence and shock/boundary-layer interaction.
             </p>
             <a
               role="button"
               class="btn btn-lg btn-outline-light"
-              href="https://apps.wtamu.edu/vitae/vitae.go?vid=244"
-              >Curriculum Vitae</a
+              href="https://www.wtamu.edu/academics/yong-yang-bio.aspx"
+              >My Bio</a
             >
           </div>
         </div>
@@ -127,73 +127,11 @@
       </div>
 
       <div id="publications" class="section">
-        <h1 class="section-title">Publications</h1>
-        <div
-          class="text-center d-block btn-group btn-group-toggle"
-          data-toggle="buttons"
-        >
-          <label
-            class="mb-3 btn btn-outline-dark rounded-pill active"
-            data-mixitup-control
-            data-filter="all"
-          >
-            <input
-              type="radio"
-              name="options"
-              id="option1"
-              autocomplete="off"
-              checked
-            />
-            All
-          </label>
-          <label
-            class="mb-3 btn btn-outline-dark rounded-pill"
-            data-mixitup-control
-            data-filter=".book"
-          >
-            <input
-              type="radio"
-              name="options"
-              id="option1"
-              autocomplete="off"
-              checked
-            />
-            Book
-          </label>
-          <label
-            class="mb-3 btn btn-outline-dark rounded-pill"
-            data-mixitup-control
-            data-filter=".article"
-          >
-            <input
-              type="radio"
-              name="options"
-              id="option1"
-              autocomplete="off"
-              checked
-            />
-            Journal Article
-          </label>
-          <label
-            class="mb-3 btn btn-outline-dark rounded-pill"
-            data-mixitup-control
-            data-filter=".inproceedings"
-          >
-            <input
-              type="radio"
-              name="options"
-              id="option1"
-              autocomplete="off"
-              checked
-            />
-            Conference Proceedings
-          </label>
-        </div>
-
+        <h1 class="section-title">Recent Publications</h1>
         <div class="paper">
           <!-- Load publication list by script below -->
         </div>
-        <!--/.row-->
+
       </div>
 
       <div id="tools" class="section">
@@ -209,7 +147,7 @@
                 href="tools/Countdown-Timer/"
                 class="btn btn-block btn-dark"
                 target="_blank"
-                >Try</a
+                >Go!</a
               >
             </div>
           </div>
@@ -225,7 +163,7 @@
                 href="tools/Riemann-Sum/"
                 class="btn btn-block btn-dark"
                 target="_blank"
-                >Try</a
+                >Go!</a
               >
             </div>
           </div>
@@ -241,7 +179,7 @@
                 href="tools/Graph-Solid-of-Revolution/"
                 class="btn btn-block btn-dark"
                 target="_blank"
-                >Try</a
+                >Go!</a
               >
             </div>
           </div>
@@ -257,7 +195,7 @@
                 href="tools/Newton-Method/"
                 class="btn btn-block btn-dark"
                 target="_blank"
-                >Try</a
+                >Go!</a
               >
             </div>
           </div>
@@ -274,7 +212,7 @@
                 href="tools/Secant-Method/"
                 class="btn btn-block btn-dark"
                 target="_blank"
-                >Try</a
+                >Go!</a
               >
             </div>
           </div>
@@ -290,7 +228,7 @@
                 href="tools/Air-Balloon/"
                 class="btn btn-block btn-dark"
                 target="_blank"
-                >Try</a
+                >Go!</a
               >
             </div>
           </div>
@@ -306,7 +244,7 @@
                 href="tools/Speeding-Car/"
                 class="btn btn-block btn-dark"
                 target="_blank"
-                >Try</a
+                >Go!</a
               >
             </div>
           </div>
@@ -322,7 +260,7 @@
                 href="tools/Circle-Tangent/"
                 class="btn btn-block btn-dark"
                 target="_blank"
-                >Try</a
+                >Go!</a
               >
             </div>
           </div>
@@ -338,7 +276,7 @@
                 href="tools/Vector-Equations/"
                 class="btn btn-block btn-dark"
                 target="_blank"
-                >Try</a
+                >Go!</a
               >
             </div>
           </div>
@@ -375,7 +313,7 @@
           &copy;2019 <strong>Yong Yang</strong>. All Rights Reserved
         </p>
         <p class="small mb-0 pb-4">
-          Last updated: Wednesday, April 29, 2020
+          Last updated: 2020-05-01 19:37:03
         </p>
       </div>
     </footer>
@@ -399,45 +337,52 @@
     ></script>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
     <script id="bookStore" type="x-handlebars-template">
-      {{#each records}}
+        {{#each records}}
+        {{#compare @index "2" operator="<="}}
+        	<div class="block-wrapper mt-3 p-4 rounded" {{#compare @index "2" operator="=="}}style="cursor: pointer;" onclick="window.open('publication.html');"{{/compare}}>
+        		<div class="media {{#compare @index "2" operator="=="}}blur{{/compare}}">
+        			<div class="mr-4">
+                <a href=
+                {{#if doi}}
+        				"https://doi.org/{{doi}}"
+        			{{else}}
+        				"{{url}}"
+        			{{/if}}
+        				target="_blank" class="text-dark h4">
+        				<i class="fas
+        					{{#compare type "inproceedings" operator="=="}} fa-file-alt{{/compare}}
+        					{{#compare type "book" operator="=="}} fa-book{{/compare}}
+        					{{#compare type "article" operator="=="}} fa-archive{{/compare}}
+        				"></i>
+        				</a>
+        			</div>
+        			<div class="media-body">
+        				<p class="media-heading h4">{{title}}</p>
+        				<p>{{#each author}}
+        				{{#compare name "Yang, Yong" operator="=="}}<b>{{/compare}}
+        				{{parseName name}}
+        				{{#compare name "Yang, Yong" operator="=="}}</b>{{/compare}}
+        				,
+        				{{/each}}
+        				<i>
+        				{{#compare type "inproceedings" operator="=="}} {{booktitle}}{{/compare}}
+        				{{#compare type "book" operator="=="}} {{publisher.name}}{{/compare}}
+        				{{#compare type "article" operator="=="}} {{journal.name}}{{/compare}}
+        				</i>, {{year}}
+        				</p>
+        			</div>
+        		</div>
+          
+          {{#compare @index "2" operator="=="}}
+          <div class="text-center mt-n3">
+            <a id="showmore" role="button" target="_blank" href="publication.html">+ View All Publications</a>
+          </div>
+          {{/compare}}
+        </div>
 
-      <div class="mix {{type}}">
-      	<div class="block-wrapper mb-3 p-4 rounded">
-      		<div class="media">
-      			<div class="mr-4">
-              <a href=
-              {{#if doi}}
-      				"https://doi.org/{{doi}}"
-      			{{else}}
-      				"{{url}}"
-      			{{/if}}
-      				target="_blank" class="text-dark h4">
-      				<i class="fas
-      					{{#compare type "inproceedings" operator="=="}} fa-file-alt{{/compare}}
-      					{{#compare type "book" operator="=="}} fa-book{{/compare}}
-      					{{#compare type "article" operator="=="}} fa-archive{{/compare}}
-      				"></i>
-      				</a>
-      			</div>
-      			<div class="media-body">
-      				<p class="media-heading h4">{{title}}</p>
-      				<p>{{#each author}}
-      				{{#compare name "Yang, Yong" operator="=="}}<b>{{/compare}}
-      				{{parseName name}}
-      				{{#compare name "Yang, Yong" operator="=="}}</b>{{/compare}}
-      				,
-      				{{/each}}
-      				<i>
-      				{{#compare type "inproceedings" operator="=="}} {{booktitle}}{{/compare}}
-      				{{#compare type "book" operator="=="}} {{publisher.name}}{{/compare}}
-      				{{#compare type "article" operator="=="}} {{journal.name}}{{/compare}}
-      				</i>, {{year}}
-      				</p>
-      			</div>
-      		</div>
-      	</div>
-      </div>
-      {{/each}}
+        {{/compare}}
+
+        {{/each}}
     </script>
 
     <script
@@ -450,7 +395,6 @@
       crossorigin="anonymous"
     ></script>
     <script src="./js/mixitup.min.js" charset="utf-8"></script>
-
     <script src="./js/main.js" charset="utf-8"></script>
   </body>
 </html>
