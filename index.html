@@ -25,10 +25,10 @@
     <link rel="stylesheet" href="./css/responsive.css" />
   </head>
 
-  <body data-spy="scroll" data-target="#mynavbar" data-offset="0">
-    <div class="preloader">
+  <body data-spy="scroll" data-target="#mynavbar" data-offset="10">
+    <!-- <div class="preloader">
       <div class="loader"><span class="sr-only">Loading...</span></div>
-    </div>
+    </div> -->
     <header>
       <nav
         id="mynavbar"
@@ -188,7 +188,6 @@
 
 
 
-    </div>
 
       <div id="publications" class="section">
         <h1 class="section-title">Recent Publications</h1>
@@ -402,7 +401,7 @@
     <script id="bookStore" type="x-handlebars-template">
       {{#each records}}
       {{#compare @index "2" operator="<="}}
-      	<div class="block-wrapper mt-3 p-4 rounded" {{#compare @index "2" operator="=="}}style="cursor: pointer;" onclick="window.open('publication.html');"{{/compare}}>
+      	<div class="block-wrapper mt-3 p-4 rounded" {{#compare @index "2" operator="=="}} {{/compare}}>
       		<div class="media {{#compare @index "2" operator="=="}}blur{{/compare}}">
       			<div class="mr-4">
               <a href=
@@ -438,7 +437,7 @@
 
         {{#compare @index "2" operator="=="}}
         <div class="text-center mt-n3">
-          <a id="showmore" role="button" target="_blank" href="publication.html">+ View All Publications</a>
+          <a type="button" class="btn btn-outline-dark btn-lg" href="publication.html">+ View All Publications</a>
         </div>
         {{/compare}}
       </div>

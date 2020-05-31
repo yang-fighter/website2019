@@ -1,0 +1,41 @@
+/**
+ * @Author: Yong Yang
+ * @Date:   03-25-2019 13:31:25
+ * @Email:  yyang@wtamu.edu
+ * @Last modified by:   Yong Yang
+ * @Last modified time: 04-04-2019 10:35:17
+ */
+
+ html, body {
+   height: 100%;
+   /* margin: 0; */
+ }
+
+ /* Section Style */
+ .section {
+   padding-top: 7rem;
+ }
+ .section-title {
+   text-align: center;
+ }
+
+/* Block Wrapper Style */
+ .block-wrapper {
+   text-align: left;
+   box-shadow: 1px 1px 9px rgba(0, 0, 0, 0.1);
+   background: #fff;
+   transition: all 0.3s ease-in-out;
+ }
+
+ .block-wrapper .paper-title {
+   margin: 0 auto 10px 30px;
+   font-size: 20px;
+   font-weight: 600;
+   text-transform: capitalize;
+   transition: all 0.3s ease-in-out;
+ }
+ .block-wrapper:hover {
+   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.07);
+   -ms-transform: translateY(-3px);
+   transform: translateY(-3px);
+ }
